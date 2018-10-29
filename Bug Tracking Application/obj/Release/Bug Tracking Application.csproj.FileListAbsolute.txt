@@ -1,0 +1,14 @@
+D:\Bug Tracking Application\Bug Tracking Application\bin\Release\Bug Tracking Application.exe.config
+D:\Bug Tracking Application\Bug Tracking Application\bin\Release\Bug Tracking Application.exe
+D:\Bug Tracking Application\Bug Tracking Application\bin\Release\Bug Tracking Application.pdb
+D:\Bug Tracking Application\Bug Tracking Application\bin\Release\MySql.Data.dll
+D:\Bug Tracking Application\Bug Tracking Application\bin\Release\Google.Protobuf.dll
+D:\Bug Tracking Application\Bug Tracking Application\bin\Release\MySql.Data.xml
+D:\Bug Tracking Application\Bug Tracking Application\obj\Release\Bug_Tracking_Application.formLogin.resources
+D:\Bug Tracking Application\Bug Tracking Application\obj\Release\Bug_Tracking_Application.formSignUp.resources
+D:\Bug Tracking Application\Bug Tracking Application\obj\Release\Bug_Tracking_Application.Properties.Resources.resources
+D:\Bug Tracking Application\Bug Tracking Application\obj\Release\Bug Tracking Application.csproj.GenerateResource.cache
+D:\Bug Tracking Application\Bug Tracking Application\obj\Release\Bug Tracking Application.csproj.CoreCompileInputs.cache
+D:\Bug Tracking Application\Bug Tracking Application\obj\Release\Bug Tracking Application.csproj.CopyComplete
+D:\Bug Tracking Application\Bug Tracking Application\obj\Release\Bug Tracking Application.exe
+D:\Bug Tracking Application\Bug Tracking Application\obj\Release\Bug Tracking Application.pdb
