@@ -65,6 +65,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBConnect.cs" />
     <Compile Include="formLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +78,7 @@
     <Compile Include="formSignUp.Designer.cs">
       <DependentUpon>formSignUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Encrypter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="formLogin.resx">

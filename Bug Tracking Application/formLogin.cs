@@ -81,15 +81,21 @@ namespace Bug_Tracking_Application
             textUsername = "";
             textPassword = "";
 
-            
+            Encrypter encrypter = new Encrypter();
             
             textUsername = txtUsername.Text;
-            
+            //if password field is not empty then only encrypt it. Else leave it empty
+            if (!string.IsNullOrEmpty(txtPassword.Text))
+            {
+                textPassword = encrypter.MD5Hash(txtPassword.Text);
+            }
 
             //checking if any field is empty
             validateIfAnyFieldIsEmpty();
             if (!isFormValidationOk){return;}//if form is not validated, dont execute futher lines of code
-                        
+
+            //getting username and password from database
+            if (!getDataFromDatabase()) { return; }
             
             //Check if password is correct            
             if (password.Equals(textPassword))
@@ -133,7 +139,28 @@ namespace Bug_Tracking_Application
                 return;
             }
         }
+        private Boolean getDataFromDatabase() {
+            DBConnect dbConn = new DBConnect();
 
+            int numOfRows = dbConn.Count("SELECT Count(*) FROM userdetails where username = '" + textUsername + "'");
+            if (numOfRows > 0)
+            {                
+                List<string>[] list = new List<string>[4];
+                //sending sql command to dbConnect class
+                list = dbConn.Select("Select * from userdetails where username = '" + textUsername + "'", "userdetails");
+                userId = list[0][0];
+                username = list[1][0];
+                password = list[2][0];
+                type = list[3][0];
+                return true;
+            }
+            else{
+                MessageBox.Show("This user is not Registered");
+                return false;
+            }
+
+            
+        }
         
 
         private void openUserDashboard()
@@ -154,7 +181,8 @@ namespace Bug_Tracking_Application
             if (type.Equals("user"))
             {
                 //open user dashboard
-                                
+                
+                
             }
         }
  

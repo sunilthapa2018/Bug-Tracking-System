@@ -14,7 +14,8 @@ namespace Bug_Tracking_Application
     public partial class formSignUp : Form
     {
         String textUsername, textPassword, textConfirmPassoword, comboType;
-        Boolean isFormValidationOk = true;        
+        Boolean isFormValidationOk = true;
+        DBConnect dbConn = new DBConnect();
         public formSignUp()
         {
             InitializeComponent();
@@ -95,8 +96,23 @@ namespace Bug_Tracking_Application
             if (!isFormValidationOk) {
                 return;
             }            
-                    
+            if (checkIfUserAlreadyExist()) {
+                errorProvider1.SetError(txtUsername, null);
+                errorProvider1.SetError(txtUsername, "User Already Registered,Please Enter New Username");
+                txtUsername.Focus();
+                return;
+            }
             
+            Encrypter encrypter = new Encrypter();
+            String conPass = encrypter.MD5Hash(txtPassword.Text);
+            try {
+                dbConn.executeQuery("INSERT INTO userdetails (userid, username, password, type) VALUES " +
+                    "(NULL, '" + textUsername + "','" + conPass + "', '" + comboType.ToLower() + "');");                
+                MessageBox.Show("A New User have been Registered");
+            }
+            catch (Exception ex) {
+                MessageBox.Show("" + ex.StackTrace);
+            }
             
 
 
@@ -140,6 +156,16 @@ namespace Bug_Tracking_Application
                 isFormValidationOk = false;
                 return;
             }
-        }        
+        }
+        private Boolean checkIfUserAlreadyExist() {
+            int numOfRows = dbConn.Count("SELECT Count(*) FROM userdetails where username = '" + textUsername + "'");
+            if (numOfRows != 0)
+            {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
     }
 }

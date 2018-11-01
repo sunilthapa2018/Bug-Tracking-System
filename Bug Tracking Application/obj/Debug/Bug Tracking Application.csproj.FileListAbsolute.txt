@@ -19,18 +19,18 @@ D:\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug_Tracking_Appl
 D:\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug_Tracking_Application.formUserEditBugReport.resources
 D:\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug_Tracking_Application.formUserEditReport.resources
 D:\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug_Tracking_Application.formEditUser.resources
-C:\Users\Sunil\Desktop\Commits\2 Login Page Made\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug Tracking Application.csprojAssemblyReference.cache
-C:\Users\Sunil\Desktop\Commits\2 Login Page Made\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug_Tracking_Application.formLogin.resources
-C:\Users\Sunil\Desktop\Commits\2 Login Page Made\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug_Tracking_Application.formSignUp.resources
-C:\Users\Sunil\Desktop\Commits\2 Login Page Made\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug_Tracking_Application.Properties.Resources.resources
-C:\Users\Sunil\Desktop\Commits\2 Login Page Made\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug Tracking Application.csproj.GenerateResource.cache
-C:\Users\Sunil\Desktop\Commits\2 Login Page Made\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug Tracking Application.csproj.CoreCompileInputs.cache
-C:\Users\Sunil\Desktop\Commits\2 Login Page Made\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug Tracking Application.exe
-C:\Users\Sunil\Desktop\Commits\2 Login Page Made\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug Tracking Application.pdb
-C:\Users\Sunil\Desktop\Commits\2 Login Page Made\Bug Tracking Application\Bug Tracking Application\bin\Debug\Bug Tracking Application.exe.config
-C:\Users\Sunil\Desktop\Commits\2 Login Page Made\Bug Tracking Application\Bug Tracking Application\bin\Debug\Bug Tracking Application.exe
-C:\Users\Sunil\Desktop\Commits\2 Login Page Made\Bug Tracking Application\Bug Tracking Application\bin\Debug\Bug Tracking Application.pdb
-C:\Users\Sunil\Desktop\Commits\2 Login Page Made\Bug Tracking Application\Bug Tracking Application\bin\Debug\MySql.Data.dll
-C:\Users\Sunil\Desktop\Commits\2 Login Page Made\Bug Tracking Application\Bug Tracking Application\bin\Debug\Google.Protobuf.dll
-C:\Users\Sunil\Desktop\Commits\2 Login Page Made\Bug Tracking Application\Bug Tracking Application\bin\Debug\MySql.Data.xml
-C:\Users\Sunil\Desktop\Commits\2 Login Page Made\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug Tracking Application.csproj.CopyComplete
+C:\Users\Sunil\Desktop\Commits\3 Database Connected\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug Tracking Application.csprojAssemblyReference.cache
+C:\Users\Sunil\Desktop\Commits\3 Database Connected\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug_Tracking_Application.formLogin.resources
+C:\Users\Sunil\Desktop\Commits\3 Database Connected\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug_Tracking_Application.formSignUp.resources
+C:\Users\Sunil\Desktop\Commits\3 Database Connected\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug_Tracking_Application.Properties.Resources.resources
+C:\Users\Sunil\Desktop\Commits\3 Database Connected\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug Tracking Application.csproj.GenerateResource.cache
+C:\Users\Sunil\Desktop\Commits\3 Database Connected\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug Tracking Application.csproj.CoreCompileInputs.cache
+C:\Users\Sunil\Desktop\Commits\3 Database Connected\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug Tracking Application.exe
+C:\Users\Sunil\Desktop\Commits\3 Database Connected\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug Tracking Application.pdb
+C:\Users\Sunil\Desktop\Commits\3 Database Connected\Bug Tracking Application\Bug Tracking Application\bin\Debug\Bug Tracking Application.exe.config
+C:\Users\Sunil\Desktop\Commits\3 Database Connected\Bug Tracking Application\Bug Tracking Application\bin\Debug\Bug Tracking Application.exe
+C:\Users\Sunil\Desktop\Commits\3 Database Connected\Bug Tracking Application\Bug Tracking Application\bin\Debug\Bug Tracking Application.pdb
+C:\Users\Sunil\Desktop\Commits\3 Database Connected\Bug Tracking Application\Bug Tracking Application\bin\Debug\MySql.Data.dll
+C:\Users\Sunil\Desktop\Commits\3 Database Connected\Bug Tracking Application\Bug Tracking Application\bin\Debug\Google.Protobuf.dll
+C:\Users\Sunil\Desktop\Commits\3 Database Connected\Bug Tracking Application\Bug Tracking Application\bin\Debug\MySql.Data.xml
+C:\Users\Sunil\Desktop\Commits\3 Database Connected\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug Tracking Application.csproj.CopyComplete
