@@ -66,6 +66,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBConnect.cs" />
+    <Compile Include="formEditUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formEditUser.Designer.cs">
+      <DependentUpon>formEditUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\formUserEditBugReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\formUserEditBugReport.Designer.cs">
+      <DependentUpon>formUserEditBugReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\formUserEditReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\formUserEditReport.Designer.cs">
+      <DependentUpon>formUserEditReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\formUserHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\formUserHome.Designer.cs">
+      <DependentUpon>formUserHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="formLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,13 +103,43 @@
       <DependentUpon>formSignUp.cs</DependentUpon>
     </Compile>
     <Compile Include="Encrypter.cs" />
+    <Compile Include="User\formUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\formUser.Designer.cs">
+      <DependentUpon>formUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\formUserReportBug.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\formUserReportBug.Designer.cs">
+      <DependentUpon>formUserReportBug.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="formEditUser.resx">
+      <DependentUpon>formEditUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\formUserEditBugReport.resx">
+      <DependentUpon>formUserEditBugReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\formUserEditReport.resx">
+      <DependentUpon>formUserEditReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\formUserHome.resx">
+      <DependentUpon>formUserHome.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formLogin.resx">
       <DependentUpon>formLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formSignUp.resx">
       <DependentUpon>formSignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\formUser.resx">
+      <DependentUpon>formUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\formUserReportBug.resx">
+      <DependentUpon>formUserReportBug.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

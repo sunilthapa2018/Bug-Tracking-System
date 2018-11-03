@@ -181,7 +181,10 @@ namespace Bug_Tracking_Application
             if (type.Equals("user"))
             {
                 //open user dashboard
-                
+                this.Hide();
+                formUser formUser = new formUser(username,userId);
+                formUser.ShowDialog();
+                this.Close();
                 
             }
         }
