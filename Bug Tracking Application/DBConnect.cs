@@ -170,6 +170,26 @@ namespace Bug_Tracking_Application
                                     list[i].Add(dataReader.GetString(i) + "");
                                 }
                             }
+                            else if (tableName.Equals("bugassign"))
+                            {
+
+                                string[] row = { dataReader.GetString(0), dataReader.GetString(1), dataReader.GetString(2),
+                                    dataReader.GetString(3)};
+                                for (int i = 0; i < 4; i++)
+                                {
+                                    list[i].Add(dataReader.GetString(i) + "");
+                                }
+                            }
+                            else if (tableName.Equals("bugsolve"))
+                            {
+                                string[] row = { dataReader.GetString(0), dataReader.GetString(1), dataReader.GetString(2),
+                                    dataReader.GetString(3), dataReader.GetString(4), dataReader.GetString(5),
+                                    dataReader.GetString(6), dataReader.GetString(7), dataReader.GetString(8)};
+                                for (int i = 0; i < 9; i++)
+                                {
+                                    list[i].Add(dataReader.GetString(i) + "");
+                                }
+                            }
                             else if (tableName.Equals("join")){
                                 string[] row = { dataReader.GetString(0), dataReader.GetString(1), dataReader.GetString(2),
                                     dataReader.GetString(3), dataReader.GetString(4), dataReader.GetString(5), dataReader.GetString(6) };
@@ -199,7 +219,27 @@ namespace Bug_Tracking_Application
                                     list[i].Add(dataReader.GetString(i) + "");
                                 }
                             }
-
+                            else if (tableName.Equals("joinType4"))
+                            {
+                                string[] row = { dataReader.GetString(0), dataReader.GetString(1), dataReader.GetString(2),
+                                    dataReader.GetString(3),dataReader.GetString(4), dataReader.GetString(5),
+                                    dataReader.GetString(6)};
+                                for (int i = 0; i < 7; i++)
+                                {
+                                    list[i].Add(dataReader.GetString(i) + "");
+                                }
+                            }
+                            else if (tableName.Equals("joinType5"))
+                            {
+                                string[] row = { dataReader.GetString(0), dataReader.GetString(1), dataReader.GetString(2),
+                                    dataReader.GetString(3),dataReader.GetString(4), dataReader.GetString(5),
+                                    dataReader.GetString(6),dataReader.GetString(7),dataReader.GetString(8)};
+                                for (int i = 0; i < 9; i++)
+                                {
+                                    list[i].Add(dataReader.GetString(i) + "");
+                                }
+                            }
+                            
 
                         }
                     }

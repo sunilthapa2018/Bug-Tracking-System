@@ -1,6 +1,6 @@
-﻿namespace Bug_Tracking_Application
+﻿namespace Bug_Tracking_Application.Programmer
 {
-    partial class formUserHome
+    partial class formProgrammerHome
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formUserHome));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formProgrammerHome));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -41,7 +41,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblBugsFound = new System.Windows.Forms.Label();
+            this.lblBugsAppointed = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -60,10 +60,10 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(28, 32);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(760, 537);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 1;
             // 
             // label5
             // 
@@ -176,7 +176,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(122)))), ((int)(((byte)(184)))));
             this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.lblBugsFound);
+            this.panel2.Controls.Add(this.lblBugsAppointed);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Location = new System.Drawing.Point(18, 101);
             this.panel2.Name = "panel2";
@@ -193,21 +193,21 @@
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
-            // lblBugsFound
+            // lblBugsAppointed
             // 
-            this.lblBugsFound.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblBugsAppointed.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblBugsFound.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(122)))), ((int)(((byte)(184)))));
-            this.lblBugsFound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblBugsFound.Font = new System.Drawing.Font("Calibri", 30F);
-            this.lblBugsFound.ForeColor = System.Drawing.Color.White;
-            this.lblBugsFound.Location = new System.Drawing.Point(70, 10);
-            this.lblBugsFound.Name = "lblBugsFound";
-            this.lblBugsFound.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblBugsFound.Size = new System.Drawing.Size(153, 49);
-            this.lblBugsFound.TabIndex = 2;
-            this.lblBugsFound.Text = "0";
-            this.lblBugsFound.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblBugsAppointed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(122)))), ((int)(((byte)(184)))));
+            this.lblBugsAppointed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblBugsAppointed.Font = new System.Drawing.Font("Calibri", 30F);
+            this.lblBugsAppointed.ForeColor = System.Drawing.Color.White;
+            this.lblBugsAppointed.Location = new System.Drawing.Point(70, 10);
+            this.lblBugsAppointed.Name = "lblBugsAppointed";
+            this.lblBugsAppointed.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblBugsAppointed.Size = new System.Drawing.Size(153, 49);
+            this.lblBugsAppointed.TabIndex = 2;
+            this.lblBugsAppointed.Text = "0";
+            this.lblBugsAppointed.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label7
             // 
@@ -215,27 +215,26 @@
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(122)))), ((int)(((byte)(184)))));
             this.label7.Font = new System.Drawing.Font("Calibri", 16F);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(72, 61);
+            this.label7.Location = new System.Drawing.Point(66, 61);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(145, 27);
+            this.label7.Size = new System.Drawing.Size(156, 27);
             this.label7.TabIndex = 3;
-            this.label7.Text = "Bugs Reported";
+            this.label7.Text = "Appointed Bugs";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // formUserHome
+            // formProgrammerHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(800, 600);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(800, 600);
-            this.Name = "formUserHome";
-            this.ShowIcon = false;
+            this.Name = "formProgrammerHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formUserHome_FormClosing);
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.formProgrammerHome_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -254,18 +253,18 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lblBugsFound;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label lblBugsUnsolved;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lblBugsSolved;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblBugsAppointed;
+        private System.Windows.Forms.Label label7;
     }
 }

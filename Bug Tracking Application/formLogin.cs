@@ -20,8 +20,6 @@ namespace Bug_Tracking_Application
         public formLogin()
         {
             InitializeComponent();
-            
-
         }
 
 
@@ -169,14 +167,18 @@ namespace Bug_Tracking_Application
             if (type.Equals("admin"))
             {
                 //open admin dashboard
-                MessageBox.Show("Admin");
-                return;
+                this.Hide();
+                Admin.formAdmin formAdmin = new Admin.formAdmin(username, userId);
+                formAdmin.ShowDialog();                 
+                this.Close();
             }
             if (type.Equals("programmer"))
             {
                 //open programmer dashboard
-                MessageBox.Show("programmer");
-                return;
+                this.Hide();
+                Programmer.formProgrammer formProgrammer = new Programmer.formProgrammer(username, userId);
+                formProgrammer.ShowDialog();
+                this.Close();
             }
             if (type.Equals("user"))
             {

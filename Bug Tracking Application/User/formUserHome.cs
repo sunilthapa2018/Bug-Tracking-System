@@ -62,6 +62,8 @@ namespace Bug_Tracking_Application
             {
                 formReportBug.Activate();
             }
+            
+
         }
 
         private void btnEditBugReport_Click(object sender, EventArgs e)

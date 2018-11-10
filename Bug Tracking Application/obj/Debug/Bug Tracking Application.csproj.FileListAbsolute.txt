@@ -40,3 +40,33 @@ C:\Users\Sunil\Desktop\Commits\4 Users Part Completed\Bug Tracking Application\B
 C:\Users\Sunil\Desktop\Commits\4 Users Part Completed\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug Tracking Application.csproj.CopyComplete
 C:\Users\Sunil\Desktop\Commits\4 Users Part Completed\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug Tracking Application.exe
 C:\Users\Sunil\Desktop\Commits\4 Users Part Completed\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug Tracking Application.pdb
+C:\Users\Sunil\Desktop\Commits\5 Programmer Part Completed\Bug Tracking Application\Bug Tracking Application\bin\Debug\Bug Tracking Application.exe.config
+C:\Users\Sunil\Desktop\Commits\5 Programmer Part Completed\Bug Tracking Application\Bug Tracking Application\bin\Debug\Bug Tracking Application.exe
+C:\Users\Sunil\Desktop\Commits\5 Programmer Part Completed\Bug Tracking Application\Bug Tracking Application\bin\Debug\Bug Tracking Application.pdb
+C:\Users\Sunil\Desktop\Commits\5 Programmer Part Completed\Bug Tracking Application\Bug Tracking Application\bin\Debug\MySql.Data.dll
+C:\Users\Sunil\Desktop\Commits\5 Programmer Part Completed\Bug Tracking Application\Bug Tracking Application\bin\Debug\Google.Protobuf.dll
+C:\Users\Sunil\Desktop\Commits\5 Programmer Part Completed\Bug Tracking Application\Bug Tracking Application\bin\Debug\MySql.Data.xml
+C:\Users\Sunil\Desktop\Commits\5 Programmer Part Completed\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug_Tracking_Application.formEditUser.resources
+C:\Users\Sunil\Desktop\Commits\5 Programmer Part Completed\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug_Tracking_Application.Programmer.formProgrammer.resources
+C:\Users\Sunil\Desktop\Commits\5 Programmer Part Completed\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug_Tracking_Application.formUserEditBugReport.resources
+C:\Users\Sunil\Desktop\Commits\5 Programmer Part Completed\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug_Tracking_Application.formUserEditReport.resources
+C:\Users\Sunil\Desktop\Commits\5 Programmer Part Completed\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug_Tracking_Application.formLogin.resources
+C:\Users\Sunil\Desktop\Commits\5 Programmer Part Completed\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug_Tracking_Application.formSignUp.resources
+C:\Users\Sunil\Desktop\Commits\5 Programmer Part Completed\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug_Tracking_Application.formUser.resources
+C:\Users\Sunil\Desktop\Commits\5 Programmer Part Completed\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug_Tracking_Application.formUserHome.resources
+C:\Users\Sunil\Desktop\Commits\5 Programmer Part Completed\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug_Tracking_Application.formUserReportBug.resources
+C:\Users\Sunil\Desktop\Commits\5 Programmer Part Completed\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug_Tracking_Application.Properties.Resources.resources
+C:\Users\Sunil\Desktop\Commits\5 Programmer Part Completed\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug Tracking Application.csproj.GenerateResource.cache
+C:\Users\Sunil\Desktop\Commits\5 Programmer Part Completed\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug Tracking Application.csproj.CoreCompileInputs.cache
+C:\Users\Sunil\Desktop\Commits\5 Programmer Part Completed\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug Tracking Application.csproj.CopyComplete
+C:\Users\Sunil\Desktop\Commits\5 Programmer Part Completed\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug Tracking Application.exe
+C:\Users\Sunil\Desktop\Commits\5 Programmer Part Completed\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug Tracking Application.pdb
+C:\Users\Sunil\Desktop\Commits\5 Programmer Part Completed\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug_Tracking_Application.Programmer.formProgrammerHome.resources
+C:\Users\Sunil\Desktop\Commits\5 Programmer Part Completed\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug Tracking Application.csprojAssemblyReference.cache
+C:\Users\Sunil\Desktop\Commits\5 Programmer Part Completed\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug_Tracking_Application.Programmer.formViewAssignedBugs.resources
+C:\Users\Sunil\Desktop\Commits\5 Programmer Part Completed\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug_Tracking_Application.Programmer.formAddBugSolution.resources
+C:\Users\Sunil\Desktop\Commits\5 Programmer Part Completed\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug_Tracking_Application.Programmer.formAddSolutions.resources
+C:\Users\Sunil\Desktop\Commits\5 Programmer Part Completed\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug_Tracking_Application.Programmer.formEditBugSolution.resources
+C:\Users\Sunil\Desktop\Commits\5 Programmer Part Completed\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug_Tracking_Application.Programmer.formEditSolution.resources
+C:\Users\Sunil\Desktop\Commits\5 Programmer Part Completed\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug_Tracking_Application.Admin.formAdmin.resources
+C:\Users\Sunil\Desktop\Commits\5 Programmer Part Completed\Bug Tracking Application\Bug Tracking Application\obj\Debug\Bug_Tracking_Application.Admin.formAdminHome.resources

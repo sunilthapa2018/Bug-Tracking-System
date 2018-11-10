@@ -65,12 +65,66 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\formAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\formAdmin.Designer.cs">
+      <DependentUpon>formAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\formAdminHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\formAdminHome.Designer.cs">
+      <DependentUpon>formAdminHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="DBConnect.cs" />
     <Compile Include="formEditUser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="formEditUser.Designer.cs">
       <DependentUpon>formEditUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Programmer\formAddBugSolution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Programmer\formAddBugSolution.Designer.cs">
+      <DependentUpon>formAddBugSolution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Programmer\formAddSolutions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Programmer\formAddSolutions.Designer.cs">
+      <DependentUpon>formAddSolutions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Programmer\formEditBugSolution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Programmer\formEditBugSolution.Designer.cs">
+      <DependentUpon>formEditBugSolution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Programmer\formEditSolution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Programmer\formEditSolution.Designer.cs">
+      <DependentUpon>formEditSolution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Programmer\formProgrammer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Programmer\formProgrammer.designer.cs">
+      <DependentUpon>formProgrammer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Programmer\formProgrammerHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Programmer\formProgrammerHome.Designer.cs">
+      <DependentUpon>formProgrammerHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Programmer\formViewAssignedBugs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Programmer\formViewAssignedBugs.Designer.cs">
+      <DependentUpon>formViewAssignedBugs.cs</DependentUpon>
     </Compile>
     <Compile Include="User\formUserEditBugReport.cs">
       <SubType>Form</SubType>
@@ -83,12 +137,6 @@
     </Compile>
     <Compile Include="User\formUserEditReport.Designer.cs">
       <DependentUpon>formUserEditReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="User\formUserHome.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="User\formUserHome.Designer.cs">
-      <DependentUpon>formUserHome.cs</DependentUpon>
     </Compile>
     <Compile Include="formLogin.cs">
       <SubType>Form</SubType>
@@ -109,6 +157,12 @@
     <Compile Include="User\formUser.Designer.cs">
       <DependentUpon>formUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="User\formUserHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\formUserHome.designer.cs">
+      <DependentUpon>formUserHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="User\formUserReportBug.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,17 +171,41 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Admin\formAdmin.resx">
+      <DependentUpon>formAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\formAdminHome.resx">
+      <DependentUpon>formAdminHome.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formEditUser.resx">
       <DependentUpon>formEditUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Programmer\formAddBugSolution.resx">
+      <DependentUpon>formAddBugSolution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Programmer\formAddSolutions.resx">
+      <DependentUpon>formAddSolutions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Programmer\formEditBugSolution.resx">
+      <DependentUpon>formEditBugSolution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Programmer\formEditSolution.resx">
+      <DependentUpon>formEditSolution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Programmer\formProgrammer.resx">
+      <DependentUpon>formProgrammer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Programmer\formProgrammerHome.resx">
+      <DependentUpon>formProgrammerHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Programmer\formViewAssignedBugs.resx">
+      <DependentUpon>formViewAssignedBugs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User\formUserEditBugReport.resx">
       <DependentUpon>formUserEditBugReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User\formUserEditReport.resx">
       <DependentUpon>formUserEditReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="User\formUserHome.resx">
-      <DependentUpon>formUserHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formLogin.resx">
       <DependentUpon>formLogin.cs</DependentUpon>
@@ -137,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User\formUser.resx">
       <DependentUpon>formUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\formUserHome.resx">
+      <DependentUpon>formUserHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User\formUserReportBug.resx">
       <DependentUpon>formUserReportBug.cs</DependentUpon>
@@ -191,5 +272,6 @@
   <ItemGroup>
     <Content Include="icon %281%29.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

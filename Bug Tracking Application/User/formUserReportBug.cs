@@ -266,6 +266,11 @@ namespace Bug_Tracking_Application
             errorProvider.SetError(txtBugName, null);
         }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void cboAppName_SelectedIndexChanged(object sender, EventArgs e)
         {
             cboBugName.Items.Clear();
