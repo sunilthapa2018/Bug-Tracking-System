@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formProgrammer));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportBugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.signOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,6 +41,7 @@
             this.userDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblWelcome = new System.Windows.Forms.ToolStripStatusLabel();
+            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -70,31 +70,24 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
-            // homeToolStripMenuItem
-            // 
-            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
-            this.homeToolStripMenuItem.Text = "Home";
-            this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
-            // 
             // reportBugToolStripMenuItem
             // 
             this.reportBugToolStripMenuItem.Name = "reportBugToolStripMenuItem";
-            this.reportBugToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.reportBugToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.reportBugToolStripMenuItem.Text = "Add Bug Solution";
             this.reportBugToolStripMenuItem.Click += new System.EventHandler(this.reportBugToolStripMenuItem_Click);
             // 
             // signOutToolStripMenuItem
             // 
             this.signOutToolStripMenuItem.Name = "signOutToolStripMenuItem";
-            this.signOutToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.signOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.signOutToolStripMenuItem.Text = "Sign Out";
             this.signOutToolStripMenuItem.Click += new System.EventHandler(this.signOutToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -152,6 +145,13 @@
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(60, 17);
             this.lblWelcome.Text = "Welcome!";
+            // 
+            // homeToolStripMenuItem
+            // 
+            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.homeToolStripMenuItem.Text = "Home";
+            this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
             // formProgrammer
             // 

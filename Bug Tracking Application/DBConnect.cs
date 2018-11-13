@@ -156,8 +156,8 @@ namespace Bug_Tracking_Application
                             {
                                 string[] row = { dataReader.GetString(0), dataReader.GetString(1), dataReader.GetString(2),
                                     dataReader.GetString(3), dataReader.GetString(4), dataReader.GetString(5),
-                                    dataReader.GetString(6)};
-                                for (int i = 0; i < 7; i++)
+                                    dataReader.GetString(6),dataReader.GetString(7)};
+                                for (int i = 0; i < 8; i++)
                                 {
                                     list[i].Add(dataReader.GetString(i) + "");
                                 }

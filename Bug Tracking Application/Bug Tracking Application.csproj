@@ -65,6 +65,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\formAddAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\formAddAdmin.Designer.cs">
+      <DependentUpon>formAddAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\formAddBugAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\formAddBugAppointment.Designer.cs">
+      <DependentUpon>formAddBugAppointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\formAddProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\formAddProject.Designer.cs">
+      <DependentUpon>formAddProject.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\formAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,8 +92,56 @@
     <Compile Include="Admin\formAdminHome.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin\formAdminHome.Designer.cs">
+    <Compile Include="Admin\formAdminHome.designer.cs">
       <DependentUpon>formAdminHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\formAppointBug.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\formAppointBug.Designer.cs">
+      <DependentUpon>formAppointBug.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\formEditBugAppoint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\formEditBugAppoint.Designer.cs">
+      <DependentUpon>formEditBugAppoint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\formEditBugAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\formEditBugAppointment.Designer.cs">
+      <DependentUpon>formEditBugAppointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\formEditProjectName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\formEditProjectName.Designer.cs">
+      <DependentUpon>formEditProjectName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\formEditProjectNames.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\formEditProjectNames.Designer.cs">
+      <DependentUpon>formEditProjectNames.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\formViewBugAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\formViewBugAppointment.Designer.cs">
+      <DependentUpon>formViewBugAppointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\formViewBugAudit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\formViewBugAudit.Designer.cs">
+      <DependentUpon>formViewBugAudit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\formViewProjectNames.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\formViewProjectNames.Designer.cs">
+      <DependentUpon>formViewProjectNames.cs</DependentUpon>
     </Compile>
     <Compile Include="DBConnect.cs" />
     <Compile Include="formEditUser.cs">
@@ -171,11 +237,44 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Admin\formAddAdmin.resx">
+      <DependentUpon>formAddAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\formAddBugAppointment.resx">
+      <DependentUpon>formAddBugAppointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\formAddProject.resx">
+      <DependentUpon>formAddProject.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin\formAdmin.resx">
       <DependentUpon>formAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\formAdminHome.resx">
       <DependentUpon>formAdminHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\formAppointBug.resx">
+      <DependentUpon>formAppointBug.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\formEditBugAppoint.resx">
+      <DependentUpon>formEditBugAppoint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\formEditBugAppointment.resx">
+      <DependentUpon>formEditBugAppointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\formEditProjectName.resx">
+      <DependentUpon>formEditProjectName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\formEditProjectNames.resx">
+      <DependentUpon>formEditProjectNames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\formViewBugAppointment.resx">
+      <DependentUpon>formViewBugAppointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\formViewBugAudit.resx">
+      <DependentUpon>formViewBugAudit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\formViewProjectNames.resx">
+      <DependentUpon>formViewProjectNames.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formEditUser.resx">
       <DependentUpon>formEditUser.cs</DependentUpon>

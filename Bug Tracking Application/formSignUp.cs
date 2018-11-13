@@ -11,12 +11,12 @@ using System.Windows.Forms;
 namespace Bug_Tracking_Application
 {
     
-    public partial class formSignUp : Form
+    public partial class formAddAdmin : Form
     {
         String textUsername, textPassword, textConfirmPassoword, comboType;
         Boolean isFormValidationOk = true;
         DBConnect dbConn = new DBConnect();
-        public formSignUp()
+        public formAddAdmin()
         {
             InitializeComponent();
         }
@@ -59,7 +59,7 @@ namespace Bug_Tracking_Application
         {
             if (e.KeyCode == Keys.Enter)
             {
-                txtPassword.Focus();
+                btnSignUp.PerformClick();
             }
         }
 
@@ -67,7 +67,7 @@ namespace Bug_Tracking_Application
         {
             if (e.KeyCode == Keys.Enter)
             {
-                txtConfirmPassword.Focus();
+                btnSignUp.PerformClick();
             }
         }
 
@@ -110,9 +110,7 @@ namespace Bug_Tracking_Application
                     "(NULL, '" + textUsername + "','" + conPass + "', '" + comboType.ToLower() + "');");                
                 MessageBox.Show("A New User have been Registered");
             }
-            catch (Exception ex) {
-                MessageBox.Show("" + ex.StackTrace);
-            }
+            catch (Exception ex) {MessageBox.Show("" + ex.StackTrace);}
             
 
 
@@ -121,28 +119,26 @@ namespace Bug_Tracking_Application
         private void validateForm() {
             Boolean isAnythingEmpty = false;
             isFormValidationOk = true;
+            errorProvider1.SetError(txtConfirmPassword, null);
+            errorProvider1.SetError(txtPassword, null);
+            errorProvider1.SetError(txtUsername, null);
             if (string.IsNullOrEmpty(textConfirmPassoword))
-            {
-                errorProvider1.SetError(txtConfirmPassword, null);
+            {                
                 errorProvider1.SetError(txtConfirmPassword, "Please Enter Confirm Password");
                 txtConfirmPassword.Focus();
                 isAnythingEmpty = true;                
             }
             if (string.IsNullOrEmpty(textPassword))
-            {
-                errorProvider1.SetError(txtPassword, null);
+            {                
                 errorProvider1.SetError(txtPassword, "Please Enter Password");
                 txtPassword.Focus();
-                isAnythingEmpty = true;
-                
+                isAnythingEmpty = true;                
             }
             if (string.IsNullOrEmpty(textUsername))
-            {
-                errorProvider1.SetError(txtUsername, null);
+            {                
                 errorProvider1.SetError(txtUsername, "Please Enter Username");
                 txtUsername.Focus();
-                isAnythingEmpty = true;
-                
+                isAnythingEmpty = true;                
             }
             if (isAnythingEmpty || !textPassword.Equals(textConfirmPassoword))
             {
@@ -150,8 +146,7 @@ namespace Bug_Tracking_Application
                 return;
             }
             if (!textPassword.Equals(textConfirmPassoword))
-            {
-                errorProvider1.SetError(txtConfirmPassword, null);
+            {                
                 errorProvider1.SetError(txtConfirmPassword, "Your Confirm Password doesn't match");
                 isFormValidationOk = false;
                 return;

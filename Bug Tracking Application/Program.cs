@@ -29,7 +29,7 @@ namespace Bug_Tracking_Application
             //Application.Run(new Programmer.formAddBugSolution("17"));
 
             //Admin
-            Application.Run(new Admin.formAdmin("18"));
+            Application.Run(new Admin.formAdmin("Admin","18"));
         }
     }
 }

@@ -233,8 +233,7 @@
             this.Name = "formUserHome";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Home";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formUserHome_FormClosing);
+            this.Text = "Home";            
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

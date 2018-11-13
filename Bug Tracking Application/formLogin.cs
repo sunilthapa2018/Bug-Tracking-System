@@ -66,7 +66,7 @@ namespace Bug_Tracking_Application
         private void btnSignUp_Click(object sender, EventArgs e)
         {
             this.Hide();//hiding this form
-            Form formSignUp = new formSignUp();                                
+            Form formSignUp = new formAddAdmin();                                
             formSignUp.ShowDialog();//opening formSignUp form
             this.Close();//close this form if formSignUp is closed
 
@@ -167,10 +167,8 @@ namespace Bug_Tracking_Application
             if (type.Equals("admin"))
             {
                 //open admin dashboard
-                this.Hide();
-                Admin.formAdmin formAdmin = new Admin.formAdmin(username, userId);
-                formAdmin.ShowDialog();                 
-                this.Close();
+                MessageBox.Show("Admin");
+                return;
             }
             if (type.Equals("programmer"))
             {

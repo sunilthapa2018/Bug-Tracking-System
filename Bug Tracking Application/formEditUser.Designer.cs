@@ -42,9 +42,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.cboType = new System.Windows.Forms.ComboBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.txtOldPassword = new System.Windows.Forms.TextBox();
@@ -55,12 +52,16 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.txtUserType = new System.Windows.Forms.TextBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panel2.SuspendLayout();
@@ -68,6 +69,10 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -83,9 +88,9 @@
             this.groupBox1.Controls.Add(this.btnSaveChanges);
             this.groupBox1.Controls.Add(this.panel3);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.panel4);
             this.groupBox1.Controls.Add(this.panel5);
             this.groupBox1.Controls.Add(this.panel2);
+            this.groupBox1.Controls.Add(this.panel6);
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
@@ -123,7 +128,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(120, 157);
+            this.label6.Location = new System.Drawing.Point(120, 158);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(86, 23);
             this.label6.TabIndex = 2;
@@ -225,42 +230,6 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Edit User Details";
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.SystemColors.Control;
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel4.Controls.Add(this.cboType);
-            this.panel4.Controls.Add(this.pictureBox5);
-            this.panel4.Location = new System.Drawing.Point(228, 157);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(193, 26);
-            this.panel4.TabIndex = 0;
-            // 
-            // cboType
-            // 
-            this.cboType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboType.Enabled = false;
-            this.cboType.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cboType.Font = new System.Drawing.Font("Arial", 12F);
-            this.cboType.FormattingEnabled = true;
-            this.cboType.Items.AddRange(new object[] {
-            "Programmer",
-            "User"});
-            this.cboType.Location = new System.Drawing.Point(21, -3);
-            this.cboType.Name = "cboType";
-            this.cboType.Size = new System.Drawing.Size(170, 26);
-            this.cboType.TabIndex = 0;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackgroundImage = global::Bug_Tracking_Application.Properties.Resources.user2;
-            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox5.Location = new System.Drawing.Point(0, 2);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox5.TabIndex = 9;
-            this.pictureBox5.TabStop = false;
-            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.Window;
@@ -361,6 +330,71 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.SystemColors.Control;
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel6.Controls.Add(this.panel7);
+            this.panel6.Controls.Add(this.pictureBox8);
+            this.panel6.Controls.Add(this.textBox3);
+            this.panel6.Enabled = false;
+            this.panel6.Location = new System.Drawing.Point(228, 157);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(193, 26);
+            this.panel6.TabIndex = 1;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.SystemColors.Control;
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel7.Controls.Add(this.pictureBox7);
+            this.panel7.Controls.Add(this.txtUserType);
+            this.panel7.Enabled = false;
+            this.panel7.Location = new System.Drawing.Point(-2, -2);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(193, 26);
+            this.panel7.TabIndex = 10;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackgroundImage = global::Bug_Tracking_Application.Properties.Resources.user2;
+            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox7.Location = new System.Drawing.Point(0, 2);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox7.TabIndex = 9;
+            this.pictureBox7.TabStop = false;
+            // 
+            // txtUserType
+            // 
+            this.txtUserType.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUserType.Enabled = false;
+            this.txtUserType.Font = new System.Drawing.Font("Arial", 12F);
+            this.txtUserType.Location = new System.Drawing.Point(22, 2);
+            this.txtUserType.Name = "txtUserType";
+            this.txtUserType.Size = new System.Drawing.Size(150, 19);
+            this.txtUserType.TabIndex = 0;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.BackgroundImage = global::Bug_Tracking_Application.Properties.Resources.user2;
+            this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox8.Location = new System.Drawing.Point(0, 2);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox8.TabIndex = 9;
+            this.pictureBox8.TabStop = false;
+            // 
+            // textBox3
+            // 
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox3.Enabled = false;
+            this.textBox3.Font = new System.Drawing.Font("Arial", 12F);
+            this.textBox3.Location = new System.Drawing.Point(22, 2);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(150, 19);
+            this.textBox3.TabIndex = 0;
+            // 
             // formEditUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -370,7 +404,6 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "formEditUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "formEditUser";
             this.Load += new System.EventHandler(this.formEditUser_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -378,8 +411,6 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -390,6 +421,12 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -408,9 +445,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox txtConfirmPassword;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.ComboBox cboType;
-        private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.TextBox txtNewPassword;
@@ -422,5 +456,11 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.TextBox txtOldPassword;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.TextBox txtUserType;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }

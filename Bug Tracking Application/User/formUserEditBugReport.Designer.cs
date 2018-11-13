@@ -71,12 +71,11 @@
             this.Column3,
             this.Column4});
             this.dataGridView1.ContextMenuStrip = this.myMenu;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 224);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 186);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(760, 325);
+            this.dataGridView1.Size = new System.Drawing.Size(760, 363);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
             // 
             // Column7
             // 
@@ -150,7 +149,7 @@
             this.cboAppName.FormattingEnabled = true;
             this.cboAppName.Items.AddRange(new object[] {
             "All"});
-            this.cboAppName.Location = new System.Drawing.Point(114, 89);
+            this.cboAppName.Location = new System.Drawing.Point(112, 73);
             this.cboAppName.Name = "cboAppName";
             this.cboAppName.Size = new System.Drawing.Size(287, 27);
             this.cboAppName.TabIndex = 5;
@@ -160,7 +159,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(24, 92);
+            this.label3.Location = new System.Drawing.Point(22, 76);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 19);
             this.label3.TabIndex = 3;
@@ -170,7 +169,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(24, 130);
+            this.label2.Location = new System.Drawing.Point(22, 114);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 19);
             this.label2.TabIndex = 4;
@@ -185,7 +184,7 @@
             "All",
             "Solved",
             "Not Solved"});
-            this.cboStatus.Location = new System.Drawing.Point(114, 165);
+            this.cboStatus.Location = new System.Drawing.Point(112, 149);
             this.cboStatus.Name = "cboStatus";
             this.cboStatus.Size = new System.Drawing.Size(147, 27);
             this.cboStatus.TabIndex = 8;
@@ -195,7 +194,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(51, 168);
+            this.label1.Location = new System.Drawing.Point(49, 152);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 19);
             this.label1.TabIndex = 7;
@@ -204,7 +203,7 @@
             // btnRefresh
             // 
             this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRefresh.Location = new System.Drawing.Point(641, 151);
+            this.btnRefresh.Location = new System.Drawing.Point(650, 126);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(58, 54);
             this.btnRefresh.TabIndex = 9;
@@ -215,7 +214,7 @@
             // btnEdit
             // 
             this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEdit.Location = new System.Drawing.Point(577, 151);
+            this.btnEdit.Location = new System.Drawing.Point(586, 126);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(58, 54);
             this.btnEdit.TabIndex = 9;
@@ -230,7 +229,7 @@
             this.cboBugName.FormattingEnabled = true;
             this.cboBugName.Items.AddRange(new object[] {
             "All"});
-            this.cboBugName.Location = new System.Drawing.Point(114, 127);
+            this.cboBugName.Location = new System.Drawing.Point(112, 111);
             this.cboBugName.Name = "cboBugName";
             this.cboBugName.Size = new System.Drawing.Size(287, 27);
             this.cboBugName.TabIndex = 11;
@@ -242,7 +241,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(308, 26);
+            this.label4.Location = new System.Drawing.Point(308, 21);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(185, 33);
             this.label4.TabIndex = 12;
@@ -251,7 +250,7 @@
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.Location = new System.Drawing.Point(705, 151);
+            this.btnClose.Location = new System.Drawing.Point(714, 126);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(58, 54);
             this.btnClose.TabIndex = 13;

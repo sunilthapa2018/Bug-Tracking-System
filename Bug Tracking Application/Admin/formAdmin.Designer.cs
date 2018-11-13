@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formAdmin));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblWelcome = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -35,18 +36,18 @@
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.signOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.assignedBugsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.userDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.appointBugsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bugHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.projectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bugHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bugAppointedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.projectsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.projectsToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bugsReportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.projectsToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.userDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -95,55 +96,23 @@
             // homeToolStripMenuItem
             // 
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.homeToolStripMenuItem.Text = "Home";
             this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
             // signOutToolStripMenuItem
             // 
             this.signOutToolStripMenuItem.Name = "signOutToolStripMenuItem";
-            this.signOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.signOutToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.signOutToolStripMenuItem.Text = "Sign Out";
             this.signOutToolStripMenuItem.Click += new System.EventHandler(this.signOutToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // viewToolStripMenuItem
-            // 
-            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.assignedBugsToolStripMenuItem,
-            this.bugHistoryToolStripMenuItem,
-            this.projectsToolStripMenuItem1});
-            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.viewToolStripMenuItem.Text = "View";
-            // 
-            // assignedBugsToolStripMenuItem
-            // 
-            this.assignedBugsToolStripMenuItem.Name = "assignedBugsToolStripMenuItem";
-            this.assignedBugsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.assignedBugsToolStripMenuItem.Text = "Bug Reports";
-            // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.projectsToolStripMenuItem2,
-            this.bugsReportsToolStripMenuItem,
-            this.userDetailsToolStripMenuItem});
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
-            this.editToolStripMenuItem.Text = "Edit";
-            // 
-            // userDetailsToolStripMenuItem
-            // 
-            this.userDetailsToolStripMenuItem.Name = "userDetailsToolStripMenuItem";
-            this.userDetailsToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.userDetailsToolStripMenuItem.Text = "Password";
             // 
             // addToolStripMenuItem
             // 
@@ -158,44 +127,85 @@
             // usersToolStripMenuItem
             // 
             this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            this.usersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usersToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.usersToolStripMenuItem.Text = "Other Admin";
+            this.usersToolStripMenuItem.Click += new System.EventHandler(this.usersToolStripMenuItem_Click);
             // 
             // appointBugsToolStripMenuItem
             // 
             this.appointBugsToolStripMenuItem.Name = "appointBugsToolStripMenuItem";
-            this.appointBugsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.appointBugsToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.appointBugsToolStripMenuItem.Text = "Bug Appointment";
-            // 
-            // bugHistoryToolStripMenuItem
-            // 
-            this.bugHistoryToolStripMenuItem.Name = "bugHistoryToolStripMenuItem";
-            this.bugHistoryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.bugHistoryToolStripMenuItem.Text = "Bug History";
+            this.appointBugsToolStripMenuItem.Click += new System.EventHandler(this.appointBugsToolStripMenuItem_Click);
             // 
             // projectsToolStripMenuItem
             // 
             this.projectsToolStripMenuItem.Name = "projectsToolStripMenuItem";
-            this.projectsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.projectsToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.projectsToolStripMenuItem.Text = "Project Names";
+            this.projectsToolStripMenuItem.Click += new System.EventHandler(this.projectsToolStripMenuItem_Click);
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bugHistoryToolStripMenuItem,
+            this.bugAppointedToolStripMenuItem,
+            this.projectsToolStripMenuItem1});
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.viewToolStripMenuItem.Text = "View";
+            // 
+            // bugHistoryToolStripMenuItem
+            // 
+            this.bugHistoryToolStripMenuItem.Name = "bugHistoryToolStripMenuItem";
+            this.bugHistoryToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.bugHistoryToolStripMenuItem.Text = "Bug Audit History";
+            this.bugHistoryToolStripMenuItem.Click += new System.EventHandler(this.bugHistoryToolStripMenuItem_Click);
+            // 
+            // bugAppointedToolStripMenuItem
+            // 
+            this.bugAppointedToolStripMenuItem.Name = "bugAppointedToolStripMenuItem";
+            this.bugAppointedToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.bugAppointedToolStripMenuItem.Text = "Bug Appointed";
+            this.bugAppointedToolStripMenuItem.Click += new System.EventHandler(this.bugAppointedToolStripMenuItem_Click);
             // 
             // projectsToolStripMenuItem1
             // 
             this.projectsToolStripMenuItem1.Name = "projectsToolStripMenuItem1";
-            this.projectsToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.projectsToolStripMenuItem1.Text = "Projects";
+            this.projectsToolStripMenuItem1.Size = new System.Drawing.Size(168, 22);
+            this.projectsToolStripMenuItem1.Text = "Project Names";
+            this.projectsToolStripMenuItem1.Click += new System.EventHandler(this.projectsToolStripMenuItem1_Click);
             // 
-            // projectsToolStripMenuItem2
+            // editToolStripMenuItem
             // 
-            this.projectsToolStripMenuItem2.Name = "projectsToolStripMenuItem2";
-            this.projectsToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
-            this.projectsToolStripMenuItem2.Text = "Project Names";
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bugsReportsToolStripMenuItem,
+            this.projectsToolStripMenuItem2,
+            this.userDetailsToolStripMenuItem});
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Text = "Edit";
             // 
             // bugsReportsToolStripMenuItem
             // 
             this.bugsReportsToolStripMenuItem.Name = "bugsReportsToolStripMenuItem";
-            this.bugsReportsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.bugsReportsToolStripMenuItem.Text = "Bugs Reports";
+            this.bugsReportsToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.bugsReportsToolStripMenuItem.Text = "Bug Appointment";
+            this.bugsReportsToolStripMenuItem.Click += new System.EventHandler(this.bugsReportsToolStripMenuItem_Click);
+            // 
+            // projectsToolStripMenuItem2
+            // 
+            this.projectsToolStripMenuItem2.Name = "projectsToolStripMenuItem2";
+            this.projectsToolStripMenuItem2.Size = new System.Drawing.Size(169, 22);
+            this.projectsToolStripMenuItem2.Text = "Project Names";
+            this.projectsToolStripMenuItem2.Click += new System.EventHandler(this.projectsToolStripMenuItem2_Click);
+            // 
+            // userDetailsToolStripMenuItem
+            // 
+            this.userDetailsToolStripMenuItem.Name = "userDetailsToolStripMenuItem";
+            this.userDetailsToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.userDetailsToolStripMenuItem.Text = "Password";
+            this.userDetailsToolStripMenuItem.Click += new System.EventHandler(this.userDetailsToolStripMenuItem_Click);
             // 
             // formAdmin
             // 
@@ -204,6 +214,7 @@
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(800, 600);
@@ -229,7 +240,6 @@
         private System.Windows.Forms.ToolStripMenuItem signOutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem assignedBugsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem userDetailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
@@ -240,5 +250,6 @@
         private System.Windows.Forms.ToolStripMenuItem projectsToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem projectsToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem bugsReportsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bugAppointedToolStripMenuItem;
     }
 }

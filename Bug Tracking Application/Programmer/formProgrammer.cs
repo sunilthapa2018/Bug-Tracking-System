@@ -1,4 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Bug_Tracking_Application.Programmer
@@ -18,6 +25,7 @@ namespace Bug_Tracking_Application.Programmer
             InitializeComponent();
             this.userId = userId;
             this.userName = userName;
+            lblWelcome.Text = "Welcome, " + userName;
         }
 
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -104,7 +112,13 @@ namespace Bug_Tracking_Application.Programmer
         }
 
         private void formProgrammer_Load(object sender, EventArgs e)
-        {            
+        {
+            WindowState = FormWindowState.Maximized;
+            foreach (Control ctrl in this.Controls) {
+                if (ctrl is MdiClient) {
+                    ctrl.BackColor = Color.White;
+                }
+            }
             formProgrammerHome = new formProgrammerHome(userId);
             formProgrammerHome.MdiParent = this;
             formProgrammerHome.Show();
@@ -112,7 +126,14 @@ namespace Bug_Tracking_Application.Programmer
             formAddSolutions = new formAddSolutions(userId);
             formViewAssignedBugs = new formViewAssignedBugs(userId);
             formEditBugSolution = new formEditBugSolution(userId);
-        }        
+        }
+        public bool IsFormOpen(Type formType)
+        {
+            foreach (Form form in Application.OpenForms)
+                if (form.GetType().Name == form.Name)
+                    return true;
+            return false;
+        }
 
     }
 }

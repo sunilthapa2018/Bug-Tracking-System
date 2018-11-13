@@ -14,15 +14,15 @@ namespace Bug_Tracking_Application.Programmer
     {
         DBConnect dbConn = new DBConnect();
         String userId;        
-        public formProgrammerHome(String userId)
+        public formProgrammerHome(string userId)
         {
             InitializeComponent();
             this.userId = userId;
         }
 
-        private void formProgrammerHome_Load(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Maximized;       
+        private void formProgrammerHome_Load(object sender, EventArgs e)        {
+            WindowState = FormWindowState.Maximized;            
+            //formEditBugSolution = new formEditBugSolution(userId);
             loadFormDetails();
             
         }
@@ -38,6 +38,6 @@ namespace Bug_Tracking_Application.Programmer
             lblBugsAppointed.Text = numOfAppointedBugs.ToString();
             lblBugsSolved.Text = numOfBugsSolved.ToString();
             lblBugsUnsolved.Text = numOfBugsUnsolved.ToString();
-        }        
+        }
     }
 }

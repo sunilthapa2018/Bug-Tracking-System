@@ -44,54 +44,5 @@ namespace Bug_Tracking_Application
             lblBugsSolved.Text = numOfBugsSolved.ToString();
             lblBugsUnsolved.Text = numOfBugsUnsolved.ToString();            
         }
-
-        private void formUserHome_FormClosing(object sender, FormClosingEventArgs e)
-        {
-
-        }
-
-        private void btnAddBugReport_Click(object sender, EventArgs e)
-        {
-            if (!formReportBug.Visible)
-            {
-                formReportBug = new formUserReportBug(userId);
-                formReportBug.MdiParent = this.ParentForm; //this refers to f1's parent, the MainForm
-                formReportBug.Show();
-            }
-            else
-            {
-                formReportBug.Activate();
-            }
-            
-
-        }
-
-        private void btnEditBugReport_Click(object sender, EventArgs e)
-        {
-            if (!formUserEditBugReport.Visible)
-            {
-                formUserEditBugReport = new formUserEditBugReport(userId);
-                formUserEditBugReport.MdiParent = this.ParentForm;
-                formUserEditBugReport.Show();
-            }
-            else
-            {
-                formUserEditBugReport.Activate();
-            }
-        }
-
-        private void btnChangePassword_Click(object sender, EventArgs e)
-        {
-            if (!formEditUser.Visible)
-            {
-                formEditUser = new formEditUser(userId);
-                formEditUser.MdiParent = this.ParentForm;
-                formEditUser.Show();
-            }
-            else
-            {
-                formEditUser.Activate();
-            }
-        }
     }
 }

@@ -27,6 +27,14 @@ namespace Bug_Tracking_Application.Programmer
 
         private void formAddSolutions_Load(object sender, EventArgs e)
         {
+            //opening this form fullscreen
+            WindowState = FormWindowState.Maximized;
+            //making datagridview select whole row on cell select
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            //making datagridview alternate rows color different
+            this.dataGridView1.RowsDefaultCellStyle.BackColor = Color.Bisque;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;
+
             cboStatus.SelectedIndex = 0;            
         }
 
@@ -121,14 +129,14 @@ namespace Bug_Tracking_Application.Programmer
             catch (Exception ex) { MessageBox.Show("" + ex.StackTrace); }
             return appName;
         }
-        private string getUserName(String bugId)
+        private string getUserName(String uId)
         {
             String userName = "";
             try
             {
                 List<string>[] list = new List<string>[4];
                 //sending sql command to dbConnect class
-                list = dbConn.Select("Select * from userdetails WHERE userid = '" + userId + "';", "userdetails");
+                list = dbConn.Select("Select * from userdetails WHERE userid = '" + uId + "';", "userdetails");
                 for (int i = 0; i < list[0].Count(); i++)
                 {
                     userName = list[1][0];

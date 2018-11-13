@@ -171,15 +171,11 @@ namespace Bug_Tracking_Application
             {
                 string date = DateTime.Now.ToString("MM/dd/yyyy");
                 dbConn.executeQuery("INSERT INTO bugreports (reportid, bugid, description, userid, reportdate, " +
-                    "screenshot, status)" + " VALUES " +
+                    "screenshot, status, assignstatus)" + " VALUES " +
                     "(NULL, '" + bugid + "','" + description + "', '" + userId + "','" + date + "','" +
-                    img + "','" + "Not Solved" + "');");
+                    img + "','Not Solved', 'Not Assigned');");
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("" + ex.StackTrace);
-                    
-            }
+            catch (Exception ex){MessageBox.Show("" + ex.StackTrace);}
             MessageBox.Show("A New bug report has been uploaded");
         }
         private void insertNewBugRecordOnDatabase()
@@ -195,11 +191,11 @@ namespace Bug_Tracking_Application
             {
                 string date = DateTime.Now.ToString("MM/dd/yyyy");
                 dbConn.executeQuery("INSERT INTO bugreports (reportid, bugid, description, userid, reportdate, " +
-                    "screenshot, status)" + " VALUES " +
+                    "screenshot, status, assignstatus)" + " VALUES " +
                     "(NULL, '" + bugid + "','" + description + "', '" + userId + "','" + date + "','" +
-                    img + "','" + "Not Solved" + "');");
+                    img + "','Not Solved', 'Not Assigned');");
             }
-            catch (Exception ex){MessageBox.Show("" + ex.StackTrace);}
+            catch (Exception ex) { MessageBox.Show("" + ex.StackTrace); }
             MessageBox.Show("A New report has been uploaded for an old bug");
         }
     

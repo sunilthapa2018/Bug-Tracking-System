@@ -23,7 +23,7 @@ namespace Bug_Tracking_Application
         public formUser(string userName,string userId)
         {
             InitializeComponent();
-            lblWelcome.Text = "Welcome, " + userName;            
+            lblWelcome.Text = "Welcome, " + userName;
             this.userId = userId;
             
         }

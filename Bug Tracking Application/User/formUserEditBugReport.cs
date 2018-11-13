@@ -31,30 +31,11 @@ namespace Bug_Tracking_Application
             this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;
             //selecting first item in each comboboxes
             getProjectNames();
-            showAllBugs();
-            cboAppName.SelectedIndex = 0;
-            
-            cboBugName.SelectedIndex = 0;
-            cboStatus.SelectedIndex = 0;
+            showAllBugs();//to show all bug names
+            cboAppName.SelectedIndex = 0; //selecting 1st item in combobox
+            cboBugName.SelectedIndex = 0; //selecting 1st item in combobox
+            cboStatus.SelectedIndex = 0; //selecting 1st item in combobox
 
-        }
-
-        private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
-        {
-            /*if (e.Button == MouseButtons.Right) {
-                int rowIndex = dataGridView1.CurrentCell.RowIndex;
-                //int positionXYMouseRow = dataGridView1.HitTest(e.X, e.Y).RowIndex;
-                if (rowIndex > 0)
-                {
-                    //dataGridView1.ClearSelection();
-                    //dataGridView1.Rows[rowIndex].Selected = true;
-                    
-                    
-
-                }
-
-                
-            }*/
         }
 
         private void menuEdit_Click(object sender, EventArgs e)
@@ -69,20 +50,21 @@ namespace Bug_Tracking_Application
 
         private void cboAppName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cboBugName.Items.Clear();
-            cboBugName.Items.Add("All");
-            cboBugName.SelectedIndex = 0;
+            cboBugName.Items.Clear(); //clearing items in combobox
+            cboBugName.Items.Add("All"); //adding an item in combobox
+            cboBugName.SelectedIndex = 0; //selecting 1st item in combobox
             if (cboAppName.SelectedIndex > 0)
             {
+                //calling a function to add bugnames to a combobox
                 showBugNames();
             }
             else if (cboAppName.SelectedIndex == 0)
             {
+                //calling a function to add appnames to a combobox
                 showAllBugs();
             }
             else { }
-
-                        
+            //to load data in datagridview
             getDataInDGV();
         }
 
@@ -231,6 +213,7 @@ namespace Bug_Tracking_Application
                         "bugreports.reportdate, bugreports.status FROM bugreports INNER JOIN bug ON " +
                         "bugreports.bugid = bug.bugid Where bug.appname = '" + cboAppItem + "';";                
             }
+            //if index of appname and status is greater then 0
             else if (cboAppIndex > 0 && cboBugIndex == 0 && cboStatusIndex > 0)
             {
                 query = "SELECT bugreports.reportid, bugreports.bugid, bug.bugname, bug.appname, bugreports.description, " +
@@ -238,6 +221,7 @@ namespace Bug_Tracking_Application
                         "bugreports.bugid = bug.bugid Where bug.appname = '" + cboAppItem + "' AND bugreports.status='" +
                         cboStatusItem + "';";                
             }
+            //if index of appname and bugname is greater then 0
             else if (cboAppIndex > 0 && cboBugIndex > 0 && cboStatusIndex == 0)
             {
                 query = "SELECT bugreports.reportid, bugreports.bugid, bug.bugname, bug.appname, bugreports.description, " +

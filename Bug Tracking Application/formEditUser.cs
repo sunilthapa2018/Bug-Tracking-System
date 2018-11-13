@@ -75,6 +75,7 @@ namespace Bug_Tracking_Application
                 txtOldPassword.Clear();
                 txtNewPassword.Clear();
                 txtConfirmPassword.Clear();
+                this.Close();
 
             }
             catch (Exception ex){MessageBox.Show("" + ex.StackTrace);}
@@ -133,7 +134,7 @@ namespace Bug_Tracking_Application
         {
             getDataFromDatabase(userId);
             txtUsername.Text = userName;
-            cboType.Text = userType.ToUpper();
+            txtUserType.Text = userType.ToUpper();
             
         }
 

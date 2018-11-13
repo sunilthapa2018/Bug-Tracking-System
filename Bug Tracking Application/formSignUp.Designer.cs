@@ -1,6 +1,6 @@
 ﻿namespace Bug_Tracking_Application
 {
-    partial class formSignUp
+    partial class formAddAdmin
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formSignUp));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formAddAdmin));
             this.label4 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnSignIn = new System.Windows.Forms.Button();
