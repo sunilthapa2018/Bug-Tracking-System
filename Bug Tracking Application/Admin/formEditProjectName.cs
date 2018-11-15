@@ -46,6 +46,10 @@ namespace Bug_Tracking_Application.Admin
                 }
             }
         }
+
+        //This function checks if project name already exists in our program
+        //Returns true if project name doesnot exists
+        //Returns false if project name exists
         private Boolean checkIfProjectAlreadyExist(string textProjectName)
         {
             int numOfRows = dbConn.Count("SELECT Count(*) FROM project where pname = '" + textProjectName + "'");
@@ -64,6 +68,7 @@ namespace Bug_Tracking_Application.Admin
             this.Close();
         }
 
+        //this function reads projectNames from database and load it to textbox
         private void getProjectName()
         {
             try
@@ -79,6 +84,7 @@ namespace Bug_Tracking_Application.Admin
             catch (Exception ex) { MessageBox.Show("" + ex.StackTrace); }
         }
 
+        //this function saves change made in textfields i.e projectName
         private void saveProjectName() {
             try
             {                
@@ -87,6 +93,14 @@ namespace Bug_Tracking_Application.Admin
                 this.Close();
             }
             catch (Exception ex) { MessageBox.Show("" + ex.StackTrace); }
+        }
+
+        private void txtProjectName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSave.PerformClick();
+            }
         }
     }
 }

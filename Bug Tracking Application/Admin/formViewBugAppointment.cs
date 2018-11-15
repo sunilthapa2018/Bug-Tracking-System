@@ -32,6 +32,7 @@ namespace Bug_Tracking_Application.Admin
             
         }
 
+        //Reading data from database and loading data to datagridview1
         private void getData()
         {
             dataGridView1.Rows.Clear();
@@ -80,6 +81,7 @@ namespace Bug_Tracking_Application.Admin
             }
             catch (Exception ex) { MessageBox.Show("" + ex.StackTrace); }
         }
+        //this function takes bugId as input and returns bugName 
         private string getBugName(String bugId)
         {
             String bugName = "";
@@ -96,6 +98,7 @@ namespace Bug_Tracking_Application.Admin
             catch (Exception ex) { MessageBox.Show("" + ex.StackTrace); }
             return bugName;
         }
+        //this function takes bugId as input and returns appName 
         private string getAppName(String bugId)
         {
             String appName = "";
@@ -112,6 +115,7 @@ namespace Bug_Tracking_Application.Admin
             catch (Exception ex) { MessageBox.Show("" + ex.StackTrace); }
             return appName;
         }
+        //this function takes userId as input and returns userName
         private string getUserName(String userId)
         {
             String userName = "";

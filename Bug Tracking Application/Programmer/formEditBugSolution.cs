@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Bug_Tracking_Application.Programmer
@@ -30,6 +25,7 @@ namespace Bug_Tracking_Application.Programmer
             string value = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             if (!value.Equals("No Rows Found"))
             {
+                //get integer from string
                 int solveId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
                 int reportId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value);
                 formEditSolution formEditSolution = new formEditSolution(userId, "" + solveId, "" + reportId);
@@ -52,6 +48,7 @@ namespace Bug_Tracking_Application.Programmer
             getData();
         }
 
+        //Reading data from database and loading data to datagridview1
         private void getData()
         {
             dataGridView1.Rows.Clear();
@@ -70,13 +67,14 @@ namespace Bug_Tracking_Application.Programmer
                 query = "";
 
                 int selectedIndex = cboStatus.SelectedIndex;
-
+                //if selected item = 'all'
                 if (selectedIndex == 0)
                 {
                     query = "SELECT bugsolve.solveid, bugsolve.reportid, bugreports.bugid, bugsolve.error, bugsolve.solution," +
                     " bugsolve.class, bugsolve.method, bugsolve.line, bugreports.status FROM bugsolve INNER JOIN bugreports ON " +
                         "bugsolve.reportid = bugreports.reportid WHERE bugsolve.userid = '" + userId + "';";
                 }
+                //if selected item = 'solved'
                 else if (selectedIndex == 1)
                 {
                     query = "SELECT bugsolve.solveid, bugsolve.reportid, bugreports.bugid, bugsolve.error, bugsolve.solution," +
@@ -84,6 +82,7 @@ namespace Bug_Tracking_Application.Programmer
                         "bugsolve.reportid = bugreports.reportid WHERE bugsolve.userid = '" + userId + "' AND " +
                         "bugreports.status = 'solved';";
                 }
+                //if selected item = 'not solved'
                 else if (selectedIndex == 2)
                 {
                     query = "SELECT bugsolve.solveid, bugsolve.reportid, bugreports.bugid, bugsolve.error, bugsolve.solution," +
@@ -105,6 +104,7 @@ namespace Bug_Tracking_Application.Programmer
                     this.dataGridView1.Rows.Add(solveid, reportId, bugName, appName, list[3][i], list[4][i], list[5][i], 
                         list[6][i], list[7][i], list[8][i]);
                 }
+                //if number of row is 0 then show 'No Rows Found'
                 if (list[0].Count() <= 0)
                 {
                     dataGridView1.Rows.Clear();
@@ -113,6 +113,7 @@ namespace Bug_Tracking_Application.Programmer
             }
             catch (Exception ex) { MessageBox.Show("" + ex.StackTrace); }
         }
+        //this function takes bugId as input and returns bugName
         private string getBugName(String bugId)
         {
             String bugName = "";
@@ -129,6 +130,7 @@ namespace Bug_Tracking_Application.Programmer
             catch (Exception ex) { MessageBox.Show("" + ex.StackTrace); }
             return bugName;
         }
+        //this function takes bugId as input and returns appName
         private string getAppName(String bugId)
         {
             String appName = "";
@@ -145,14 +147,15 @@ namespace Bug_Tracking_Application.Programmer
             catch (Exception ex) { MessageBox.Show("" + ex.StackTrace); }
             return appName;
         }
-        private string getUserName(String bugId)
+        //this function takes uId as input and returns userName
+        private string getUserName(String uId)
         {
             String userName = "";
             try
             {
                 List<string>[] list = new List<string>[4];
                 //sending sql command to dbConnect class
-                list = dbConn.Select("Select * from userdetails WHERE userid = '" + userId + "';", "userdetails");
+                list = dbConn.Select("Select * from userdetails WHERE userid = '" + uId + "';", "userdetails");
                 for (int i = 0; i < list[0].Count(); i++)
                 {
                     userName = list[1][0];

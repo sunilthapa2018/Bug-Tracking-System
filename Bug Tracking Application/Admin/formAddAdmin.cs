@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Bug_Tracking_Application.Admin
@@ -21,8 +14,7 @@ namespace Bug_Tracking_Application.Admin
         }
 
         private void btnSignUp_Click(object sender, EventArgs e)
-        {
-            //initializing variables
+        {            
             textUsername = "";
             textPassword = "";
             textConfirmPassoword = "";
@@ -33,11 +25,11 @@ namespace Bug_Tracking_Application.Admin
             textConfirmPassoword = txtConfirmPassword.Text;
             comboType = cboType.Text;
 
+            //First Validate our form data
             validateForm();
-            if (!isFormValidationOk)
-            {
-                return;
-            }
+            //if form validation is not ok then dont execute further lines of code
+            if (!isFormValidationOk){return;}
+            //to check if username is already registered in our database
             if (checkIfUserAlreadyExist())
             {
                 errorProvider1.SetError(txtUsername, null);
@@ -47,12 +39,16 @@ namespace Bug_Tracking_Application.Admin
             }
 
             Encrypter encrypter = new Encrypter();
+            //getting md5 hashed code to conPass
             String conPass = encrypter.MD5Hash(txtPassword.Text);
             try
             {
-                dbConn.executeQuery("INSERT INTO userdetails (userid, username, password, type) VALUES " +
-                    "(NULL, '" + textUsername + "','" + conPass + "', '" + comboType.ToLower() + "');");
+                dbConn.executeQuery("INSERT INTO userdetails (userid, username, password, type, status) VALUES " +
+                    "(NULL, '" + textUsername + "','" + conPass + "', '" + comboType.ToLower() + "','active');");
                 MessageBox.Show("A New ADMIN has been Registered");
+                txtConfirmPassword.Clear();
+                txtPassword.Clear();
+                txtUsername.Clear();
             }
             catch (Exception ex)
             {
@@ -110,6 +106,7 @@ namespace Bug_Tracking_Application.Admin
             this.Close();
         }
 
+        //check if anything is empty or invalid
         private void validateForm()
         {
             Boolean isAnythingEmpty = false;
@@ -147,6 +144,9 @@ namespace Bug_Tracking_Application.Admin
                 return;
             }
         }
+        //This function checks if username already exists in our program
+        //Returns true if username doesnot exists
+        //Returns false if username exists
         private Boolean checkIfUserAlreadyExist()
         {
             int numOfRows = dbConn.Count("SELECT Count(*) FROM userdetails where username = '" + textUsername + "'");

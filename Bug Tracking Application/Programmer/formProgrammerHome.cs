@@ -21,12 +21,12 @@ namespace Bug_Tracking_Application.Programmer
         }
 
         private void formProgrammerHome_Load(object sender, EventArgs e)        {
-            WindowState = FormWindowState.Maximized;            
-            //formEditBugSolution = new formEditBugSolution(userId);
+            WindowState = FormWindowState.Maximized;           
             loadFormDetails();
             
         }
 
+        //reads data from database and load all data to textfields
         private void loadFormDetails()
         {
             int numOfAppointedBugs = dbConn.Count("SELECT Count(*) FROM bugassign where userid = '" + userId + "';");

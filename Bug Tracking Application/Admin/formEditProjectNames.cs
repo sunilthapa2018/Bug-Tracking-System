@@ -37,6 +37,8 @@ namespace Bug_Tracking_Application.Admin
         {
             this.Close();
         }
+
+        //this function reads projectNames from database and load it to datagridview
         private void getProjectNames()
         {
             try

@@ -16,7 +16,8 @@ namespace Bug_Tracking_Application
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new formLogin());//Login Form
+            Application.Run(new formLogin());//Login Form
+
             //users 
             //Application.Run(new formUser("sunil","11"));
             //Application.Run(new formUserReportBug("11"));
@@ -29,7 +30,7 @@ namespace Bug_Tracking_Application
             //Application.Run(new Programmer.formAddBugSolution("17"));
 
             //Admin
-            Application.Run(new Admin.formAdmin("Admin","18"));
+            //Application.Run(new Admin.formAdmin("Admin","18"));
         }
     }
 }

@@ -25,7 +25,7 @@ namespace Bug_Tracking_Application.Admin
             WindowState = FormWindowState.Maximized;
             loadFormDetails();
         }
-
+        //reads data from database and load all data to textfields
         private void loadFormDetails()
         {
             int numOfBugs = dbConn.Count("SELECT Count(*) FROM bugreports;");

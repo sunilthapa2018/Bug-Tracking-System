@@ -28,13 +28,12 @@ namespace Bug_Tracking_Application
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             //making datagridview alternate rows color different
             this.dataGridView1.RowsDefaultCellStyle.BackColor = Color.Bisque;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;
-            //selecting first item in each comboboxes
-            getProjectNames();
-            showAllBugs();//to show all bug names
-            cboAppName.SelectedIndex = 0; //selecting 1st item in combobox
-            cboBugName.SelectedIndex = 0; //selecting 1st item in combobox
-            cboStatus.SelectedIndex = 0; //selecting 1st item in combobox
+            this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;            
+            getProjectNames();            
+            showAllBugs();
+            cboAppName.SelectedIndex = 0;
+            cboBugName.SelectedIndex = 0;
+            cboStatus.SelectedIndex = 0;
 
         }
 
@@ -82,6 +81,8 @@ namespace Bug_Tracking_Application
         {
             getDataInDGV();
         }
+
+        //reads data from database and add appnames to combobox i.e cboAppName
         private void getProjectNames()
         {
             try
@@ -100,6 +101,8 @@ namespace Bug_Tracking_Application
             }
 
         }
+
+        //reads data from database and add bugnames to combobox i.e cboBugName
         private void showAllBugs()
         {
             try
@@ -114,6 +117,8 @@ namespace Bug_Tracking_Application
             }
             catch (Exception ex) { MessageBox.Show("" + ex.StackTrace); }
         }
+
+        //shows bugnames if an appname has a bug linked
         private void showBugNames()
         {
             String apName = cboAppName.SelectedItem.ToString().ToLower();
@@ -125,6 +130,10 @@ namespace Bug_Tracking_Application
                 }
             }
         }
+
+        //checks if that particular app name has bug linked
+        //return true if bug is found
+        //return false if bug is not found
         private Boolean hasBug(String aName)
         {
             int numOfRows = dbConn.Count("SELECT Count(*) FROM bug where appname = '" + aName + "'");
@@ -137,6 +146,7 @@ namespace Bug_Tracking_Application
                 return false;
             }
         }
+        //reads bugs names from database and load it to a combobox i.e cboBugName
         private void getBugNames(String aName)
         {
             try
@@ -151,26 +161,27 @@ namespace Bug_Tracking_Application
             }
             catch (Exception ex) { MessageBox.Show("" + ex.StackTrace); }
         }
-        private void getDataInDGV() {
-            //Declaring variables
+        //load data in datagridview according to comboboxe's selection
+        private void getDataInDGV() {            
             int cboAppIndex, cboBugIndex, cboStatusIndex;
             String cboAppItem, cboBugItem, cboStatusItem;
             String query;
-            //clearing all rows of datagridview
+            
             dataGridView1.Rows.Clear();
-            //getting selected index of a combobox into a variable
+            
             cboAppIndex = cboAppName.SelectedIndex;
             cboBugIndex = cboBugName.SelectedIndex;
             cboStatusIndex = cboStatus.SelectedIndex;
-            //initializing variables
+            
             cboAppItem = "";
             cboBugItem = "";
             cboStatusItem = "";
             query = "";
+
             //If any of the combo box has no value then exit this function
             if (cboAppIndex < 0 || cboBugIndex < 0 || cboStatusIndex < 0){return;}
 
-            //if one of the combobox has selected index greater than 0 then load values
+            //if none of the combobox has selected index greater than 0 then load values
             if (cboAppIndex > 0 || cboBugIndex > 0 || cboStatusIndex > 0)
             {                
                 cboAppItem = cboAppName.SelectedItem.ToString();
@@ -239,17 +250,16 @@ namespace Bug_Tracking_Application
             }
             try
             {
-                //declaring list inside a array
+                //declaring list inside a string array
                 List<string>[] list = new List<string>[7];
                 //sending sql command to dbConnect class                    
                 list = dbConn.Select(query, "join");
                 for (int i = 0; i < list[0].Count(); i++)
-                {
-                    //adding data retrived to datagridview
+                {                   
                     this.dataGridView1.Rows.Add(list[0][i], list[1][i], list[2][i], list[3][i], list[4][i], list[5][i], list[6][i]);
                 }
             }
-            catch (Exception ex) { MessageBox.Show(ex.StackTrace); }//exception handling
+            catch (Exception ex) { MessageBox.Show(ex.StackTrace); }
            
         }
 

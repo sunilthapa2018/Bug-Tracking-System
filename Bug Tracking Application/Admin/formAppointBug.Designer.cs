@@ -47,7 +47,7 @@
             this.cboName.Location = new System.Drawing.Point(80, 62);
             this.cboName.Name = "cboName";
             this.cboName.Size = new System.Drawing.Size(197, 27);
-            this.cboName.TabIndex = 12;
+            this.cboName.TabIndex = 0;
             this.cboName.SelectedIndexChanged += new System.EventHandler(this.cboName_SelectedIndexChanged);
             // 
             // label2
@@ -62,10 +62,12 @@
             // 
             // btnAppointBug
             // 
-            this.btnAppointBug.Location = new System.Drawing.Point(182, 95);
+            this.btnAppointBug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAppointBug.Font = new System.Drawing.Font("Calibri", 14F);
+            this.btnAppointBug.Location = new System.Drawing.Point(157, 95);
             this.btnAppointBug.Name = "btnAppointBug";
-            this.btnAppointBug.Size = new System.Drawing.Size(95, 54);
-            this.btnAppointBug.TabIndex = 15;
+            this.btnAppointBug.Size = new System.Drawing.Size(120, 54);
+            this.btnAppointBug.TabIndex = 1;
             this.btnAppointBug.Text = "Appoint Bug";
             this.btnAppointBug.UseVisualStyleBackColor = true;
             this.btnAppointBug.Click += new System.EventHandler(this.btnAppointBug_Click);
@@ -85,6 +87,7 @@
             this.lblTitle.TabIndex = 18;
             this.lblTitle.Text = "Add Bug Appointment";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click);
             // 
             // formAppointBug
             // 

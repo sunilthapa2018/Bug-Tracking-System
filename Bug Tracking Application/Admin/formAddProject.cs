@@ -36,6 +36,7 @@ namespace Bug_Tracking_Application.Admin
                 else {
                     try
                     {
+                        //sending sql command to dbConnect class 
                         dbConn.executeQuery("INSERT INTO project (pid, pname) VALUES " +
                             "(NULL, '" + txtProjectName.Text + "');");
                         MessageBox.Show("A New Project has been Registered");
@@ -54,7 +55,9 @@ namespace Bug_Tracking_Application.Admin
         {
             this.Close();
         }
-
+        //This function checks if project name already exists in our program
+        //Returns true if project name doesnot exists
+        //Returns false if project name exists
         private Boolean checkIfProjectAlreadyExist(string textProjectName)
         {
             int numOfRows = dbConn.Count("SELECT Count(*) FROM project where pname = '" + textProjectName + "'");
@@ -75,5 +78,9 @@ namespace Bug_Tracking_Application.Admin
             }
         }
 
+        private void formAddProject_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

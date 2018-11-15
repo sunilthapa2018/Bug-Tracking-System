@@ -38,6 +38,7 @@ namespace Bug_Tracking_Application.Programmer
             cboStatus.SelectedIndex = 0;            
         }
 
+        //Reading data from database and loading data to datagridview1
         private void getData()
         {
             dataGridView1.Rows.Clear();
@@ -56,12 +57,14 @@ namespace Bug_Tracking_Application.Programmer
 
                 int selectedIndex = cboStatus.SelectedIndex;                          
                 
+                //if selected item = 'all'
                 if (selectedIndex == 0)
                 {
                     query = "SELECT bugassign.reportid, bugreports.bugid, bugreports.description, bugreports.userid," +
                     " bugreports.reportdate, bugassign.assigndate, bugreports.status FROM bugassign INNER JOIN bugreports ON " +
                         "bugassign.reportid = bugreports.reportid WHERE bugassign.userid = '" + userId + "';";
                 }
+                //if selected item = 'solved'
                 else if (selectedIndex == 1)
                 {
                     query = "SELECT bugassign.reportid, bugreports.bugid, bugreports.description, bugreports.userid, " +
@@ -69,6 +72,7 @@ namespace Bug_Tracking_Application.Programmer
                         "bugassign.reportid = bugreports.reportid Where bugassign.userid = '" + userId + "' AND " +
                         "bugreports.status = 'solved';";
                 }
+                //if selected item = 'not solved'
                 else if (selectedIndex == 2)
                 {
                     query = "SELECT bugassign.reportid, bugreports.bugid, bugreports.description, bugreports.userid, " +
@@ -91,6 +95,7 @@ namespace Bug_Tracking_Application.Programmer
                     this.dataGridView1.Rows.Add(reportId, bugsId, bugName, appName, list[2][i], uname, list[4][i], 
                         list[5][i], list[6][i]);
                 }
+                //if number of row is 0 then show 'No Rows Found'
                 if (list[0].Count() <= 0) {
                     dataGridView1.Rows.Clear();
                     this.dataGridView1.Rows.Add("No Rows Found");
@@ -98,6 +103,7 @@ namespace Bug_Tracking_Application.Programmer
             }
             catch (Exception ex) { MessageBox.Show("" + ex.StackTrace); }
         }
+        //this function takes bugId as input and returns bugName
         private string getBugName(String bugId) {
             String bugName = "";
             try
@@ -113,6 +119,7 @@ namespace Bug_Tracking_Application.Programmer
             catch (Exception ex) { MessageBox.Show("" + ex.StackTrace); }
             return bugName;
         }
+        //this function takes bugId as input and returns appName
         private string getAppName(String bugId)
         {
             String appName = "";
@@ -129,6 +136,7 @@ namespace Bug_Tracking_Application.Programmer
             catch (Exception ex) { MessageBox.Show("" + ex.StackTrace); }
             return appName;
         }
+        //this function takes uId as input and returns userName
         private string getUserName(String uId)
         {
             String userName = "";

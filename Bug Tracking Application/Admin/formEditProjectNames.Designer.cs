@@ -85,9 +85,14 @@
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.Location = new System.Drawing.Point(314, 127);
+            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.LightCoral;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightCoral;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCoral;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Calibri", 14F);
+            this.btnClose.Location = new System.Drawing.Point(309, 127);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(58, 54);
+            this.btnClose.Size = new System.Drawing.Size(63, 54);
             this.btnClose.TabIndex = 30;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -96,9 +101,11 @@
             // btnRefresh
             // 
             this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRefresh.Location = new System.Drawing.Point(250, 127);
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Calibri", 14F);
+            this.btnRefresh.Location = new System.Drawing.Point(222, 127);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(58, 54);
+            this.btnRefresh.Size = new System.Drawing.Size(81, 54);
             this.btnRefresh.TabIndex = 29;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
@@ -117,9 +124,11 @@
             // btnEdit
             // 
             this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEdit.Location = new System.Drawing.Point(186, 127);
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Font = new System.Drawing.Font("Calibri", 14F);
+            this.btnEdit.Location = new System.Drawing.Point(153, 127);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(58, 54);
+            this.btnEdit.Size = new System.Drawing.Size(63, 54);
             this.btnEdit.TabIndex = 33;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;

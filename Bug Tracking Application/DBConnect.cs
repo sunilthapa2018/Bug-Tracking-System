@@ -46,9 +46,7 @@ namespace Bug_Tracking_Application
                 return true;
             }
             catch (MySqlException ex)
-            {
-                //When handling errors, you can your application's response based 
-                //on the error number.
+            {                
                 //The two most common error numbers when connecting are as follows:
                 //0: Cannot connect to server.
                 //1045: Invalid user name and/or password.
@@ -82,7 +80,7 @@ namespace Bug_Tracking_Application
             }
         }
 
-        //Execute any given query or statement (Like INSERT, UPDATE AND DELETE query)
+        //Execute any given query 
         public void executeQuery(String query)
         {
             //open connection
@@ -97,13 +95,10 @@ namespace Bug_Tracking_Application
                 //close connection
                 this.CloseConnection();
             }
-        }        
-
+        }
         //Select statement
         public List<string>[] Select(String query,String tableName)
-        {
-            //string query = "SELECT * FROM userdetails";
-
+        {            
             //Create a list to store the result
             List<string>[] list = new List<string>[10];            
             for (int i = 0; i < 10; i++) {
@@ -119,35 +114,29 @@ namespace Bug_Tracking_Application
                 //Create a data reader and Execute the command
                 MySqlDataReader dataReader = cmd.ExecuteReader();                
 
-                // Let's do it !
+                
                 try
-                {
-                    // Open the database
-                    //connection.Open();
-
-                    // Execute the query
-                    //dataReader = cmd.ExecuteReader();
-
-                    // All succesfully executed, now do something
-
-                    // IMPORTANT : 
-                    // If your query returns result, use the following processor :
+                {                 
 
                     if (dataReader.HasRows)
                     {
                         //int i = 0;
                         while (dataReader.Read())
-                        {
-                            // As our database, the array will contain : ID 0, FIRST_NAME 1,LAST_NAME 2, ADDRESS 3
-                            // Do something with every received database ROW
-                            //string[] row = { dataReader.GetString(0), dataReader.GetString(1), dataReader.GetString(2), dataReader.GetString(3) };
-                            //Console.WriteLine(dataReader.GetString(0) + " " + dataReader.GetString(1) + " " + dataReader.GetString(2) + " " + dataReader.GetString(3));
+                        {                            
 
-
-                            if (tableName.Equals("userdetails") || tableName.Equals("bug"))
+                            if (tableName.Equals("bug"))
                             {
                                 string[] row = { dataReader.GetString(0), dataReader.GetString(1), dataReader.GetString(2), dataReader.GetString(3) };
                                 for (int i = 0; i < 4; i++)
+                                {
+                                    list[i].Add(dataReader.GetString(i) + "");
+                                }
+                            }
+                            else if (tableName.Equals("userdetails"))
+                            {
+                                string[] row = { dataReader.GetString(0), dataReader.GetString(1), dataReader.GetString(2), dataReader.GetString(3),
+                                    dataReader.GetString(4) };
+                                for (int i = 0; i < 5; i++)
                                 {
                                     list[i].Add(dataReader.GetString(i) + "");
                                 }

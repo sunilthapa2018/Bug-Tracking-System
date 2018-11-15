@@ -40,6 +40,7 @@ namespace Bug_Tracking_Application
 
 
         }
+        //reads project names from database and laod it to combobox i.e. cboAppName
         private void getProjectNames() {
             try
             {
@@ -57,6 +58,7 @@ namespace Bug_Tracking_Application
             }
             
         }
+        //setting panel and visiblity style of 1
         private void setPanelStyle1() {
             lblTitle.Text = "Enter A New Bug and Report";
             txtBugName.Visible = true;
@@ -65,6 +67,7 @@ namespace Bug_Tracking_Application
             btnAddNewError.Size = new Size(140, 25);
             panelOneActive = true;
         }
+        //setting panel and visiblity style of 2
         private void setPanelStyle2()
         {
             lblTitle.Text = "Enter A New Report to old Bug";
@@ -146,6 +149,7 @@ namespace Bug_Tracking_Application
             }
         }
 
+        //adding new bug and new report to our database and showing sucess message
         private void insertNewBugToDatabase() {
             
             //saving new bug-- inserting values to bug table
@@ -178,6 +182,8 @@ namespace Bug_Tracking_Application
             catch (Exception ex){MessageBox.Show("" + ex.StackTrace);}
             MessageBox.Show("A New bug report has been uploaded");
         }
+
+        //adding new report to old bug to our database and showing sucess message
         private void insertNewBugRecordOnDatabase()
         {
             //getting bug id
@@ -198,8 +204,14 @@ namespace Bug_Tracking_Application
             catch (Exception ex) { MessageBox.Show("" + ex.StackTrace); }
             MessageBox.Show("A New report has been uploaded for an old bug");
         }
-    
-    
+        byte[] convertImageToBinary(Image img) {
+            using (MemoryStream ms = new MemoryStream()) {
+                img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                return ms.ToArray();
+            }
+        }
+
+        //this function takes bName as input and returns bugId
         private string getBugId(String bName) {
             try
             {
@@ -215,13 +227,15 @@ namespace Bug_Tracking_Application
             }
             return bugid;
         }
-        private void getBugNames(String aName)
+
+        //this function takes bName as input and loads cboBugName with bug names
+        private void getBugNames(String bName)
         {
             try
             {
                 List<string>[] list = new List<string>[4];
                 //sending sql command to dbConnect class
-                list = dbConn.Select("Select * from bug where appname = '" + aName + "'", "bug");
+                list = dbConn.Select("Select * from bug where appname = '" + bName + "'", "bug");
                 int listSize = list.Count();
                 int listSize2 = list.Length;
                 for (int i = 0; i < list[0].Count(); i++)
@@ -231,6 +245,10 @@ namespace Bug_Tracking_Application
             }
             catch (Exception ex){MessageBox.Show("" + ex.StackTrace);}            
         }
+
+        //checks if bug already exists in our system
+        //return true if bug is already existed
+        //return false if bug does not exist
         private Boolean checkIfBugAlreadyExist()
         {
             int numOfRows = dbConn.Count("SELECT Count(*) FROM bug where bugname = '" + bugName + "'");
@@ -243,6 +261,10 @@ namespace Bug_Tracking_Application
                 return false;
             }
         }
+
+        //checks if an appName has bug in our system
+        //return true if it has bug
+        //return false if it doesn't have bug
         private Boolean hasBug(String aName)
         {
             int numOfRows = dbConn.Count("SELECT Count(*) FROM bug where appname = '" + aName + "'");
@@ -267,6 +289,18 @@ namespace Bug_Tracking_Application
 
         }
 
+        private void txtDescription_KeyDown(object sender, KeyEventArgs e)
+        {
+            checkPress(e);
+        }
+        private void checkPress(KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSave.PerformClick();
+            }
+        }
+
         private void cboAppName_SelectedIndexChanged(object sender, EventArgs e)
         {
             cboBugName.Items.Clear();
@@ -282,6 +316,8 @@ namespace Bug_Tracking_Application
             }
             
         }
+
+        //shows bugnames if an appname has a bug linked
         private void showBugNames() {
             String apName = cboAppName.SelectedItem.ToString().ToLower();
             if (cboAppName.SelectedIndex > 0)
@@ -298,21 +334,19 @@ namespace Bug_Tracking_Application
             errorProvider.SetError(txtDescription, null);
         }
 
+        //checks if any field is empty in our form
         private void validateIfAnyFieldIsEmpty()
-        {
-            //initializing variables
+        {            
             textBugname = "";
             textDescription = "";
             comboAppName = "";
             isFormValidationOk = true;
             Boolean isAnythingEmpty = false;
-
-            //assigning values to variables
+            
             textBugname = txtBugName.Text;
             textDescription = txtDescription.Text;
             comboAppName = cboAppName.Text;
-
-            //clearing error provider
+            
             errorProvider.SetError(txtDescription, null);
             errorProvider.SetError(cboAppName, null);
             errorProvider.SetError(txtBugName, null);

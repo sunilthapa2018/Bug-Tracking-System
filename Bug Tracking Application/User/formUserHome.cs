@@ -33,6 +33,7 @@ namespace Bug_Tracking_Application
             loadFormDetails();
         }
 
+        //reads data from database and load all data to textfields
         private void loadFormDetails()
         {
             int numOfBugs = dbConn.Count("SELECT Count(*) FROM bugreports where userid = '" + userId + "';");

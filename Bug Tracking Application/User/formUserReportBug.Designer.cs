@@ -94,7 +94,7 @@
             this.cboAppName.Location = new System.Drawing.Point(115, 88);
             this.cboAppName.Name = "cboAppName";
             this.cboAppName.Size = new System.Drawing.Size(287, 27);
-            this.cboAppName.TabIndex = 2;
+            this.cboAppName.TabIndex = 0;
             this.cboAppName.SelectedIndexChanged += new System.EventHandler(this.cboAppName_SelectedIndexChanged);
             // 
             // label4
@@ -116,8 +116,9 @@
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(672, 164);
-            this.txtDescription.TabIndex = 3;
+            this.txtDescription.TabIndex = 2;
             this.txtDescription.TextChanged += new System.EventHandler(this.txtDescription_TextChanged);
+            this.txtDescription.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDescription_KeyDown);
             // 
             // label5
             // 
@@ -135,14 +136,15 @@
             this.btnImportScreenshot.Location = new System.Drawing.Point(115, 349);
             this.btnImportScreenshot.Name = "btnImportScreenshot";
             this.btnImportScreenshot.Size = new System.Drawing.Size(79, 29);
-            this.btnImportScreenshot.TabIndex = 4;
+            this.btnImportScreenshot.TabIndex = 3;
             this.btnImportScreenshot.Text = "Import";
             this.btnImportScreenshot.UseVisualStyleBackColor = true;
             this.btnImportScreenshot.Click += new System.EventHandler(this.btnImportScreenshot_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Calibri", 14F);
             this.btnSave.Location = new System.Drawing.Point(115, 639);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(79, 45);
@@ -153,7 +155,11 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.LightCoral;
+            this.btnCancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightCoral;
+            this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCoral;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Calibri", 14F);
             this.btnCancel.Location = new System.Drawing.Point(215, 639);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(79, 45);
@@ -198,7 +204,7 @@
             this.panel1.Location = new System.Drawing.Point(12, 40);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(815, 703);
-            this.panel1.TabIndex = 12;
+            this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // picScreenshot
@@ -236,7 +242,7 @@
             this.cboBugName.Location = new System.Drawing.Point(115, 128);
             this.cboBugName.Name = "cboBugName";
             this.cboBugName.Size = new System.Drawing.Size(287, 27);
-            this.cboBugName.TabIndex = 12;
+            this.cboBugName.TabIndex = 1;
             // 
             // btnAddNewBug
             // 

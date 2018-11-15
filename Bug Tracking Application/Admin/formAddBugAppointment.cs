@@ -26,6 +26,7 @@ namespace Bug_Tracking_Application.Admin
             {
                 if (Status.Equals("not assigned"))
                 {
+                    //getting integer value from string data
                     int reportId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
                     formAppointBug formAppointBug = new formAppointBug("" + reportId);
                     formAppointBug.Show();
@@ -49,15 +50,12 @@ namespace Bug_Tracking_Application.Admin
         }
 
         private void formAddBugAppointment_Load(object sender, EventArgs e)
-        {
-            //opening this form fullscreen
-            WindowState = FormWindowState.Maximized;
-            //making datagridview select whole row on cell select
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        {            
+            WindowState = FormWindowState.Maximized;            
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;            
             //making datagridview alternate rows color different
             this.dataGridView1.RowsDefaultCellStyle.BackColor = Color.Bisque;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;
-            //Selecting first item in a combobox
+            this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;            
             cboStatus.SelectedIndex = 0;           
         }
 
@@ -66,6 +64,7 @@ namespace Bug_Tracking_Application.Admin
             getData();
         }
 
+        //Reading data from database and loading data to datagridview1
         private void getData()
         {
             dataGridView1.Rows.Clear();
@@ -89,9 +88,7 @@ namespace Bug_Tracking_Application.Admin
                     query = "SELECT * FROM bugreports;";
                 }
                 else if (selectedIndex == 1)
-                {
-                    /*query = "SELECT reportid, bugid, description, userid, reportdate, assignstatus FROM bugreports" +
-                        "WHERE assignstatus = 'assigned';";*/
+                {                    
                     query = "SELECT * FROM bugreports WHERE assignstatus = 'assigned';";
                 }
                 else if (selectedIndex == 2)
@@ -109,7 +106,6 @@ namespace Bug_Tracking_Application.Admin
                     appName = getAppName(bugsId);
                     uid = list[3][i];
                     uname = getUserName(uid);
-
                     this.dataGridView1.Rows.Add(reportId, bugsId, bugName, appName, list[2][i], uname, list[4][i],
                         list[7][i]);
                 }
@@ -121,6 +117,7 @@ namespace Bug_Tracking_Application.Admin
             }
             catch (Exception ex) { MessageBox.Show("" + ex.StackTrace); }
         }
+        //this function takes bugId as input and returns bugName        
         private string getBugName(String bugId)
         {
             String bugName = "";
@@ -137,6 +134,7 @@ namespace Bug_Tracking_Application.Admin
             catch (Exception ex) { MessageBox.Show("" + ex.StackTrace); }
             return bugName;
         }
+        //this function takes bugId as input and returns appName i.e. project name
         private string getAppName(String bugId)
         {
             String appName = "";
@@ -153,17 +151,21 @@ namespace Bug_Tracking_Application.Admin
             catch (Exception ex) { MessageBox.Show("" + ex.StackTrace); }
             return appName;
         }
-        private string getUserName(String userId)
+        //this function takes userId as input and returns userName 
+        private string getUserName(String uId)
         {
             String userName = "";
             try
             {
                 List<string>[] list = new List<string>[4];
                 //sending sql command to dbConnect class
-                list = dbConn.Select("Select * from userdetails WHERE userid = '" + userId + "';", "userdetails");
+                list = dbConn.Select("Select * from userdetails WHERE userid = '" + uId + "';", "userdetails");
                 for (int i = 0; i < list[0].Count(); i++)
                 {
                     userName = list[1][0];
+                }
+                if (list[0].Count() <= 0) {
+                    userName = "User Is Removed";
                 }
             }
             catch (Exception ex) { MessageBox.Show("" + ex.StackTrace); }

@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace Bug_Tracking_Application.Programmer
 {
@@ -32,9 +29,51 @@ namespace Bug_Tracking_Application.Programmer
             reportBugSolved();
         }
 
-        private void validateIfAnyFieldIsEmpty()
+        private void txtBugName_KeyDown(object sender, KeyEventArgs e)
         {
-            //initializing variables
+            checkPress(e);
+        }
+
+        private void txtAppName_KeyDown(object sender, KeyEventArgs e)
+        {
+            checkPress(e);
+        }
+
+        private void txtClassName_KeyDown(object sender, KeyEventArgs e)
+        {
+            checkPress(e);
+        }
+
+        private void txtMethodName_KeyDown(object sender, KeyEventArgs e)
+        {
+            checkPress(e);
+        }
+
+        private void checkPress(KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSave.PerformClick();
+            }
+        }
+
+        private void txtLineNumber_KeyDown(object sender, KeyEventArgs e)
+        {
+            checkPress(e);
+        }
+
+        private void txtErrorCode_KeyDown(object sender, KeyEventArgs e)
+        {
+            checkPress(e);
+        }
+
+        private void txtSolvedCode_KeyDown(object sender, KeyEventArgs e)
+        {
+            checkPress(e);
+        }
+
+        private void validateIfAnyFieldIsEmpty()
+        {            
             textClassName = "";
             textMethodName = "";
             textLineNo = "";
@@ -42,18 +81,15 @@ namespace Bug_Tracking_Application.Programmer
             textFixedCode = "";
             isFormValidationOk = true;
             Boolean isAnythingEmpty = false;
-
-            //assigning values to variables
+            
             textClassName = txtClassName.Text;
             textMethodName = txtMethodName.Text;
             textLineNo = txtLineNumber.Text;
             textErrorCode = txtErrorCode.Text;
             textFixedCode = txtSolvedCode.Text;
-
-            //clearing error provider
-            errorProvider1.SetError(txtSolvedCode, null);
-            errorProvider1.SetError(txtErrorCode, null);         
             
+            errorProvider1.SetError(txtSolvedCode, null);
+            errorProvider1.SetError(txtErrorCode, null);            
 
             if (string.IsNullOrEmpty(textFixedCode))
             {
@@ -77,6 +113,85 @@ namespace Bug_Tracking_Application.Programmer
             }
         }
 
+        private void txtErrorCode_TextChanged(object sender, EventArgs e)
+        {
+            checkText(txtErrorCode);
+        }
+
+        private void checkText(RichTextBox codeRichTextBox) {
+            // getting keywords/functions
+            string keywords = @"\b(public|private|partial|static|namespace|class|using|void|foreach|in|String|string|Boolean|int)\b";
+            MatchCollection keywordMatches = Regex.Matches(codeRichTextBox.Text, keywords);
+
+            // getting types/classes from the text 
+            string types = @"\b(Console)\b";
+            MatchCollection typeMatches = Regex.Matches(codeRichTextBox.Text, types);
+
+            // getting comments (inline or multiline)
+            string comments = @"(\/\/.+?$|\/\*.+?\*\/)";
+            MatchCollection commentMatches = Regex.Matches(codeRichTextBox.Text, comments, RegexOptions.Multiline);
+
+            // getting strings
+            string strings = "\".+?\"";
+            MatchCollection stringMatches = Regex.Matches(codeRichTextBox.Text, strings);
+
+            // saving the original caret position + forecolor
+            int originalIndex = codeRichTextBox.SelectionStart;
+            int originalLength = codeRichTextBox.SelectionLength;
+            Color originalColor = Color.Black;
+
+            // MANDATORY - focuses a label before highlighting (avoids blinking)
+            lblTitle.Focus();
+
+            // removes any previous highlighting (so modified words won't remain highlighted)
+            codeRichTextBox.SelectionStart = 0;
+            codeRichTextBox.SelectionLength = codeRichTextBox.Text.Length;
+            codeRichTextBox.SelectionColor = originalColor;
+
+            // scanning...
+            foreach (Match m in keywordMatches)
+            {
+                codeRichTextBox.SelectionStart = m.Index;
+                codeRichTextBox.SelectionLength = m.Length;
+                codeRichTextBox.SelectionColor = Color.Blue;
+            }
+
+            foreach (Match m in typeMatches)
+            {
+                codeRichTextBox.SelectionStart = m.Index;
+                codeRichTextBox.SelectionLength = m.Length;
+                codeRichTextBox.SelectionColor = Color.DarkCyan;
+            }
+
+            foreach (Match m in commentMatches)
+            {
+                codeRichTextBox.SelectionStart = m.Index;
+                codeRichTextBox.SelectionLength = m.Length;
+                codeRichTextBox.SelectionColor = Color.Green;
+            }
+
+            foreach (Match m in stringMatches)
+            {
+                codeRichTextBox.SelectionStart = m.Index;
+                codeRichTextBox.SelectionLength = m.Length;
+                codeRichTextBox.SelectionColor = Color.Brown;
+            }
+
+            // restoring the original colors, for further writing
+            codeRichTextBox.SelectionStart = originalIndex;
+            codeRichTextBox.SelectionLength = originalLength;
+            codeRichTextBox.SelectionColor = originalColor;
+
+            // giving back the focus
+            codeRichTextBox.Focus();
+        }
+
+        private void txtSolvedCode_TextChanged(object sender, EventArgs e)
+        {
+            checkText(txtSolvedCode);
+        }
+
+        //This function inserts new row of data to database and shows sucess message
         private void insertNewRecordOnDatabase()
         {
             string error = txtErrorCode.Text;
@@ -96,6 +211,8 @@ namespace Bug_Tracking_Application.Programmer
             MessageBox.Show("You have sucessfully uploaded a bug solution");
             this.Close();
         }
+
+        //Sets status of bugreports table to 'solved'
         private void reportBugSolved() {            
             dbConn.executeQuery("UPDATE bugreports SET status = 'solved' WHERE reportid = '" + reportId + "';");
         }
@@ -111,6 +228,7 @@ namespace Bug_Tracking_Application.Programmer
             
         }
 
+        //get bugs and app names from database and load it to textboxs
         private void getBugAndAppName()
         {            
             try

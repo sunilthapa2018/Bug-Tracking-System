@@ -50,10 +50,15 @@
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.Location = new System.Drawing.Point(1114, 12);
+            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.LightCoral;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightCoral;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCoral;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Calibri", 14F);
+            this.btnClose.Location = new System.Drawing.Point(1106, 12);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(58, 54);
-            this.btnClose.TabIndex = 30;
+            this.btnClose.Size = new System.Drawing.Size(66, 54);
+            this.btnClose.TabIndex = 3;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -61,10 +66,12 @@
             // btnEdit
             // 
             this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEdit.Location = new System.Drawing.Point(986, 12);
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Font = new System.Drawing.Font("Calibri", 14F);
+            this.btnEdit.Location = new System.Drawing.Point(947, 12);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(58, 54);
-            this.btnEdit.TabIndex = 28;
+            this.btnEdit.Size = new System.Drawing.Size(66, 54);
+            this.btnEdit.TabIndex = 1;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
@@ -72,10 +79,12 @@
             // btnRefresh
             // 
             this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRefresh.Location = new System.Drawing.Point(1050, 12);
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Calibri", 14F);
+            this.btnRefresh.Location = new System.Drawing.Point(1019, 12);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(58, 54);
-            this.btnRefresh.TabIndex = 29;
+            this.btnRefresh.Size = new System.Drawing.Size(81, 54);
+            this.btnRefresh.TabIndex = 2;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
@@ -88,7 +97,7 @@
             this.lblTitle.Location = new System.Drawing.Point(453, 18);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(268, 33);
-            this.lblTitle.TabIndex = 24;
+            this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Edit Bug Appointment";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -117,7 +126,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1160, 477);
-            this.dataGridView1.TabIndex = 31;
+            this.dataGridView1.TabIndex = 4;
             // 
             // Column11
             // 

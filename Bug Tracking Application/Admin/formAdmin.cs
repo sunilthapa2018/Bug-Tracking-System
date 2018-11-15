@@ -22,13 +22,14 @@ namespace Bug_Tracking_Application.Admin
         formViewProjectNames formViewProjectNames;
         formEditProjectNames formEditProjectNames;
         formViewBugAudit formViewBugAudit;
+        formManageUsers formManageUsers;
         String userId, userName;
         public formAdmin(String userName, String userId)
         {
             InitializeComponent();
             this.userId = userId;
             this.userName = userName;
-            lblWelcome.Text = "Welcome, " + userName;
+            lblWelcome.Text = "User Type : ADMIN   Welcome, " + userName;
         }
 
         private void formAdmin_Load(object sender, EventArgs e)
@@ -44,6 +45,7 @@ namespace Bug_Tracking_Application.Admin
             formViewProjectNames = new formViewProjectNames();
             formEditProjectNames = new formEditProjectNames();
             formViewBugAudit = new formViewBugAudit();
+            formManageUsers = new formManageUsers();
             formAdminHome.MdiParent = this;
             formAdminHome.Show();
         }
@@ -195,6 +197,20 @@ namespace Bug_Tracking_Application.Admin
             else
             {
                 formViewBugAudit.Activate();
+            }
+        }
+
+        private void usersToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (!formManageUsers.Visible)
+            {
+                formManageUsers = new formManageUsers();
+                formManageUsers.MdiParent = this;
+                formManageUsers.Show();
+            }
+            else
+            {
+                formManageUsers.Activate();
             }
         }
 

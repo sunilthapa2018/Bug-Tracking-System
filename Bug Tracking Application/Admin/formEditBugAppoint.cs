@@ -45,6 +45,7 @@ namespace Bug_Tracking_Application.Admin
             errorProvider1.SetError(cboName, null);
         }
 
+        //read usernames from database and load it to a combobox named cboName
         private void getNames()
         {
             String userName = "";
@@ -62,6 +63,7 @@ namespace Bug_Tracking_Application.Admin
             catch (Exception ex) { MessageBox.Show("" + ex.StackTrace); }
         }
 
+        //appoint a bug to a user and save it to database
         private void AppointBug()
         {
             string userId = getUserId(cboName.SelectedItem.ToString());
@@ -75,6 +77,7 @@ namespace Bug_Tracking_Application.Admin
             catch (Exception ex) { MessageBox.Show("" + ex.StackTrace); }
         }
 
+        //this function takes username as input and returns userId 
         private string getUserId(string username)
         {
             String userId = "";

@@ -39,24 +39,50 @@ namespace Bug_Tracking_Application
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
+            
         }
 
+        private void txtAppName_KeyDown(object sender, KeyEventArgs e)
+        {
+            checkPress(e);
+        }
+
+        private void txtBugName_KeyDown(object sender, KeyEventArgs e)
+        {
+            checkPress(e);
+        }
+
+        private void txtDescription_KeyDown(object sender, KeyEventArgs e)
+        {
+            checkPress(e);
+        }
+
+        private void checkPress(KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSave.PerformClick();
+            }
+        }
+
+        //fills bug details in this form
         private void fillBugDetails() {
             getDatasFromDb();
             txtAppName.Text = appName;
             txtBugName.Text = bugName;
             txtDescription.Text = desc;            
-            //picScreenshot.Image = ByteArrayToImage(imageByte);
+            picScreenshot.Image = ByteArrayToImage(imageByte);
         }
-        /*public static Image ByteArrayToImage(byte[] byteArrayIn)
+        public static Image ByteArrayToImage(byte[] byteArrayIn)
         {
-            MemoryStream ms = new MemoryStream(byteArrayIn);
-            Image returnImage = Image.FromStream(ms);
-            return returnImage;
+            using (MemoryStream ms = new MemoryStream(byteArrayIn))
+            {
+                return Image.FromStream(ms);
+            }                
             
-        }*/
+        }
 
+        //reads data from database and assign it to variables
         private void getDatasFromDb() {
             String query = "";
             query = "SELECT bug.appname, bug.bugname, bugreports.description, bugreports.screenshot " +
@@ -75,6 +101,8 @@ namespace Bug_Tracking_Application
 
                 //imageByte = Encoding.UTF8.GetBytes(list[3][0]);
                 imageByte = Encoding.ASCII.GetBytes(list[3][0]);
+
+                //imageByte = (byte[]) (list[3][0]);
                 /*for (int i = 0; i < list[0].Count(); i++)
                 {
                     //adding data retrived to datagridview

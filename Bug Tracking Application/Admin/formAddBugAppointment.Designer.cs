@@ -49,9 +49,14 @@
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.Location = new System.Drawing.Point(814, 77);
+            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.LightCoral;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightCoral;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCoral;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Calibri", 14F);
+            this.btnClose.Location = new System.Drawing.Point(806, 77);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(58, 54);
+            this.btnClose.Size = new System.Drawing.Size(66, 54);
             this.btnClose.TabIndex = 23;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -60,9 +65,11 @@
             // btnAppointBug
             // 
             this.btnAppointBug.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAppointBug.Location = new System.Drawing.Point(686, 77);
+            this.btnAppointBug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAppointBug.Font = new System.Drawing.Font("Calibri", 14F);
+            this.btnAppointBug.Location = new System.Drawing.Point(601, 75);
             this.btnAppointBug.Name = "btnAppointBug";
-            this.btnAppointBug.Size = new System.Drawing.Size(58, 54);
+            this.btnAppointBug.Size = new System.Drawing.Size(114, 54);
             this.btnAppointBug.TabIndex = 21;
             this.btnAppointBug.Text = "Appoint Bug";
             this.btnAppointBug.UseVisualStyleBackColor = true;
@@ -71,9 +78,11 @@
             // btnRefresh
             // 
             this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRefresh.Location = new System.Drawing.Point(750, 77);
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Calibri", 14F);
+            this.btnRefresh.Location = new System.Drawing.Point(721, 77);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(58, 54);
+            this.btnRefresh.Size = new System.Drawing.Size(79, 54);
             this.btnRefresh.TabIndex = 22;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;

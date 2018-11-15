@@ -125,6 +125,12 @@
     <Compile Include="Admin\formEditProjectNames.Designer.cs">
       <DependentUpon>formEditProjectNames.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin\formManageUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\formManageUsers.Designer.cs">
+      <DependentUpon>formManageUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\formViewBugAppointment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,7 @@
       <DependentUpon>formViewProjectNames.cs</DependentUpon>
     </Compile>
     <Compile Include="DBConnect.cs" />
+    <Compile Include="DGVPrinter.cs" />
     <Compile Include="formEditUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -266,6 +273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\formEditProjectNames.resx">
       <DependentUpon>formEditProjectNames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\formManageUsers.resx">
+      <DependentUpon>formManageUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\formViewBugAppointment.resx">
       <DependentUpon>formViewBugAppointment.cs</DependentUpon>

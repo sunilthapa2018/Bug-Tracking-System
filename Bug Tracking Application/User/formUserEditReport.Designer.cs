@@ -51,6 +51,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.txtAppName);
             this.panel1.Controls.Add(this.btnCancel);
@@ -77,11 +78,16 @@
             this.txtAppName.Location = new System.Drawing.Point(115, 75);
             this.txtAppName.Name = "txtAppName";
             this.txtAppName.Size = new System.Drawing.Size(287, 27);
-            this.txtAppName.TabIndex = 15;
+            this.txtAppName.TabIndex = 0;
+            this.txtAppName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtAppName_KeyDown);
             // 
             // btnCancel
             // 
-            this.btnCancel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.LightCoral;
+            this.btnCancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightCoral;
+            this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCoral;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Calibri", 14F);
             this.btnCancel.Location = new System.Drawing.Point(215, 622);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(79, 45);
@@ -92,7 +98,8 @@
             // 
             // btnSave
             // 
-            this.btnSave.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Calibri", 14F);
             this.btnSave.Location = new System.Drawing.Point(115, 622);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(79, 45);
@@ -155,7 +162,8 @@
             this.txtBugName.Location = new System.Drawing.Point(115, 111);
             this.txtBugName.Name = "txtBugName";
             this.txtBugName.Size = new System.Drawing.Size(287, 27);
-            this.txtBugName.TabIndex = 11;
+            this.txtBugName.TabIndex = 1;
+            this.txtBugName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBugName_KeyDown);
             // 
             // txtDescription
             // 
@@ -166,7 +174,8 @@
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(654, 164);
-            this.txtDescription.TabIndex = 3;
+            this.txtDescription.TabIndex = 2;
+            this.txtDescription.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDescription_KeyDown);
             // 
             // label3
             // 
@@ -184,7 +193,7 @@
             this.btnImportScreenshot.Location = new System.Drawing.Point(115, 332);
             this.btnImportScreenshot.Name = "btnImportScreenshot";
             this.btnImportScreenshot.Size = new System.Drawing.Size(79, 29);
-            this.btnImportScreenshot.TabIndex = 4;
+            this.btnImportScreenshot.TabIndex = 3;
             this.btnImportScreenshot.Text = "Import";
             this.btnImportScreenshot.UseVisualStyleBackColor = true;
             // 
@@ -212,6 +221,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(821, 717);
             this.Controls.Add(this.panel1);
             this.Name = "formUserEditReport";

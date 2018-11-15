@@ -26,6 +26,7 @@ namespace Bug_Tracking_Application.Admin
             getNames();
         }
 
+        //read usernames from database and load it to a combobox named cboName
         private void getNames()
         {
             String userName = "";
@@ -55,7 +56,7 @@ namespace Bug_Tracking_Application.Admin
                 AppointBug();
             }
         }
-
+        //appoint a bug to a user and save it to database
         private void AppointBug()
         {
             string userId = getUserId(cboName.SelectedItem.ToString());
@@ -70,12 +71,12 @@ namespace Bug_Tracking_Application.Admin
             }
             catch (Exception ex) { MessageBox.Show("" + ex.StackTrace); }
         }
-
+        //change appoint status in 'bugreports' table to 'assigned'
         private void changeAppointStatus()
         {
             dbConn.executeQuery("UPDATE bugreports SET assignstatus = 'assigned' WHERE reportid = '" + reportId + "';");
         }
-
+        //this function takes username as input and returns userId 
         private string getUserId(string username)
         {
             String userId = "";
@@ -96,6 +97,11 @@ namespace Bug_Tracking_Application.Admin
         private void cboName_SelectedIndexChanged(object sender, EventArgs e)
         {
             errorProvider1.SetError(cboName, null);
+        }
+
+        private void lblTitle_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

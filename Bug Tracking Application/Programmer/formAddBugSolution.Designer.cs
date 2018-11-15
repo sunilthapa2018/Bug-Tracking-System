@@ -40,9 +40,7 @@
             this.txtClassName = new System.Windows.Forms.TextBox();
             this.txtMethodName = new System.Windows.Forms.TextBox();
             this.txtLineNumber = new System.Windows.Forms.TextBox();
-            this.txtErrorCode = new System.Windows.Forms.TextBox();
-            this.txtSolvedCode = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
@@ -51,14 +49,21 @@
             this.label11 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.txtBugName = new System.Windows.Forms.TextBox();
+            this.txtErrorCode = new System.Windows.Forms.RichTextBox();
+            this.txtSolvedCode = new System.Windows.Forms.RichTextBox();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 12F);
-            this.label1.Location = new System.Drawing.Point(76, 58);
+            this.label1.Location = new System.Drawing.Point(75, 58);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 19);
             this.label1.TabIndex = 0;
@@ -108,7 +113,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 12F);
-            this.label6.Location = new System.Drawing.Point(23, 223);
+            this.label6.Location = new System.Drawing.Point(22, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(129, 19);
             this.label6.TabIndex = 1;
@@ -118,7 +123,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Calibri", 12F);
-            this.label7.Location = new System.Drawing.Point(12, 440);
+            this.label7.Location = new System.Drawing.Point(11, 3);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(140, 19);
             this.label7.TabIndex = 1;
@@ -132,6 +137,7 @@
             this.txtAppName.Name = "txtAppName";
             this.txtAppName.Size = new System.Drawing.Size(266, 27);
             this.txtAppName.TabIndex = 1;
+            this.txtAppName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtAppName_KeyDown);
             // 
             // txtClassName
             // 
@@ -140,6 +146,7 @@
             this.txtClassName.Name = "txtClassName";
             this.txtClassName.Size = new System.Drawing.Size(266, 27);
             this.txtClassName.TabIndex = 2;
+            this.txtClassName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtClassName_KeyDown);
             // 
             // txtMethodName
             // 
@@ -148,6 +155,7 @@
             this.txtMethodName.Name = "txtMethodName";
             this.txtMethodName.Size = new System.Drawing.Size(266, 27);
             this.txtMethodName.TabIndex = 3;
+            this.txtMethodName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMethodName_KeyDown);
             // 
             // txtLineNumber
             // 
@@ -156,47 +164,29 @@
             this.txtLineNumber.Name = "txtLineNumber";
             this.txtLineNumber.Size = new System.Drawing.Size(266, 27);
             this.txtLineNumber.TabIndex = 4;
+            this.txtLineNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtLineNumber_KeyDown);
             // 
-            // txtErrorCode
+            // lblTitle
             // 
-            this.txtErrorCode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtErrorCode.Font = new System.Drawing.Font("Calibri", 12F);
-            this.txtErrorCode.Location = new System.Drawing.Point(172, 220);
-            this.txtErrorCode.Multiline = true;
-            this.txtErrorCode.Name = "txtErrorCode";
-            this.txtErrorCode.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtErrorCode.Size = new System.Drawing.Size(585, 200);
-            this.txtErrorCode.TabIndex = 5;
-            // 
-            // txtSolvedCode
-            // 
-            this.txtSolvedCode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSolvedCode.Font = new System.Drawing.Font("Calibri", 12F);
-            this.txtSolvedCode.Location = new System.Drawing.Point(172, 437);
-            this.txtSolvedCode.Multiline = true;
-            this.txtSolvedCode.Name = "txtSolvedCode";
-            this.txtSolvedCode.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtSolvedCode.Size = new System.Drawing.Size(585, 200);
-            this.txtSolvedCode.TabIndex = 6;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(300, 10);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(207, 33);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Add Bug Solution";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTitle.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Bold);
+            this.lblTitle.Location = new System.Drawing.Point(300, 10);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(207, 33);
+            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Text = "Add Bug Solution";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnClose
             // 
-            this.btnClose.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(257, 654);
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.LightCoral;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightCoral;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCoral;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Calibri", 14F);
+            this.btnClose.Location = new System.Drawing.Point(257, 507);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(79, 45);
             this.btnClose.TabIndex = 8;
@@ -206,8 +196,10 @@
             // 
             // btnSave
             // 
-            this.btnSave.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(172, 654);
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Calibri", 14F);
+            this.btnSave.Location = new System.Drawing.Point(172, 507);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(79, 45);
             this.btnSave.TabIndex = 7;
@@ -221,7 +213,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Calibri", 12F);
             this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(148, 58);
+            this.label9.Location = new System.Drawing.Point(149, 58);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(17, 19);
             this.label9.TabIndex = 8;
@@ -245,7 +237,7 @@
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Calibri", 12F);
             this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(148, 223);
+            this.label14.Location = new System.Drawing.Point(149, 0);
             this.label14.Margin = new System.Windows.Forms.Padding(0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(17, 19);
@@ -258,7 +250,7 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Calibri", 12F);
             this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(149, 440);
+            this.label11.Location = new System.Drawing.Point(149, 3);
             this.label11.Margin = new System.Windows.Forms.Padding(0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(17, 19);
@@ -273,33 +265,81 @@
             // 
             this.txtBugName.Enabled = false;
             this.txtBugName.Font = new System.Drawing.Font("Calibri", 12F);
-            this.txtBugName.Location = new System.Drawing.Point(171, 55);
+            this.txtBugName.Location = new System.Drawing.Point(172, 55);
             this.txtBugName.Name = "txtBugName";
             this.txtBugName.Size = new System.Drawing.Size(266, 27);
             this.txtBugName.TabIndex = 0;
+            this.txtBugName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBugName_KeyDown);
+            // 
+            // txtErrorCode
+            // 
+            this.txtErrorCode.AcceptsTab = true;
+            this.txtErrorCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtErrorCode.Font = new System.Drawing.Font("Calibri", 12F);
+            this.txtErrorCode.Location = new System.Drawing.Point(172, 0);
+            this.txtErrorCode.Name = "txtErrorCode";
+            this.txtErrorCode.Size = new System.Drawing.Size(595, 135);
+            this.txtErrorCode.TabIndex = 5;
+            this.txtErrorCode.Text = "";
+            this.txtErrorCode.TextChanged += new System.EventHandler(this.txtErrorCode_TextChanged);
+            // 
+            // txtSolvedCode
+            // 
+            this.txtSolvedCode.AcceptsTab = true;
+            this.txtSolvedCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSolvedCode.Font = new System.Drawing.Font("Calibri", 12F);
+            this.txtSolvedCode.Location = new System.Drawing.Point(172, 1);
+            this.txtSolvedCode.Name = "txtSolvedCode";
+            this.txtSolvedCode.Size = new System.Drawing.Size(595, 130);
+            this.txtSolvedCode.TabIndex = 6;
+            this.txtSolvedCode.Text = "";
+            this.txtSolvedCode.TextChanged += new System.EventHandler(this.txtSolvedCode_TextChanged);
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer1.Location = new System.Drawing.Point(0, 220);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.label6);
+            this.splitContainer1.Panel1.Controls.Add(this.label14);
+            this.splitContainer1.Panel1.Controls.Add(this.txtErrorCode);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.label7);
+            this.splitContainer1.Panel2.Controls.Add(this.txtSolvedCode);
+            this.splitContainer1.Panel2.Controls.Add(this.label11);
+            this.splitContainer1.Size = new System.Drawing.Size(784, 278);
+            this.splitContainer1.SplitterDistance = 139;
+            this.splitContainer1.TabIndex = 9;
             // 
             // formAddBugSolution
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(784, 711);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label14);
+            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtSolvedCode);
-            this.Controls.Add(this.txtErrorCode);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.txtLineNumber);
             this.Controls.Add(this.txtMethodName);
             this.Controls.Add(this.txtClassName);
             this.Controls.Add(this.txtBugName);
             this.Controls.Add(this.txtAppName);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -308,9 +348,14 @@
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "formAddBugSolution";
             this.ShowIcon = false;
-            this.Text = "Add Bug Solution";
             this.Load += new System.EventHandler(this.formAddSolution_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -329,9 +374,7 @@
         private System.Windows.Forms.TextBox txtClassName;
         private System.Windows.Forms.TextBox txtMethodName;
         private System.Windows.Forms.TextBox txtLineNumber;
-        private System.Windows.Forms.TextBox txtErrorCode;
-        private System.Windows.Forms.TextBox txtSolvedCode;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label9;
@@ -340,5 +383,8 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.TextBox txtBugName;
+        private System.Windows.Forms.RichTextBox txtErrorCode;
+        private System.Windows.Forms.RichTextBox txtSolvedCode;
+        private System.Windows.Forms.SplitContainer splitContainer1;
     }
 }

@@ -49,6 +49,29 @@ namespace Bug_Tracking_Application
             errorProvider1.SetError(txtConfirmPassword, null);
         }
 
+        private void txtOldPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            checkPress(e);
+        }
+
+        private void txtNewPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            checkPress(e);
+        }
+
+        private void txtConfirmPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            checkPress(e);
+        }
+
+        private void checkPress(KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSaveChanges.PerformClick();
+            }
+        }
+
         private void btnSaveChanges_Click(object sender, EventArgs e)
         {
             //initializing variables            
@@ -80,6 +103,7 @@ namespace Bug_Tracking_Application
             }
             catch (Exception ex){MessageBox.Show("" + ex.StackTrace);}
         }
+        //validate form if it has anything empty or invalid
         private void validateForm()
         {
             Boolean isAnythingEmpty = false;
@@ -130,6 +154,7 @@ namespace Bug_Tracking_Application
             }
         }
 
+        //get userdetails and load it to respective text fields
         private void getUserDetails(string userId)
         {
             getDataFromDatabase(userId);
@@ -138,6 +163,7 @@ namespace Bug_Tracking_Application
             
         }
 
+        //get data from database and load it to a variable
         private void getDataFromDatabase(string userId)
         {
             String query = "";

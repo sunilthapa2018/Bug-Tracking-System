@@ -14,9 +14,10 @@ namespace Bug_Tracking_Application
 {
     public partial class formLogin : Form
     {
-        String username,userId, password, type;
+        String username,userId, password, type, status;
         String textUsername, textPassword;
-        Boolean isFormValidationOk = true;
+        Boolean isFormValidationOk = true;       
+        
         public formLogin()
         {
             InitializeComponent();
@@ -98,7 +99,14 @@ namespace Bug_Tracking_Application
             //Check if password is correct            
             if (password.Equals(textPassword))
             {
-                openUserDashboard();
+                if (status.Equals("active"))
+                {
+                    openUserDashboard();
+                }
+                else {
+                    MessageBox.Show("Your Account is INACTIVE, so please contact Administrator.");
+                }
+                
             }
             //show invalid password error
             else
@@ -107,6 +115,7 @@ namespace Bug_Tracking_Application
             }
 
         }
+        //validate form if it has anything empty or invalid
         private void validateIfAnyFieldIsEmpty()
         {
 
@@ -137,8 +146,17 @@ namespace Bug_Tracking_Application
                 return;
             }
         }
+
+        //get data from database and load it to a variable
+        //returns true if it has data
+        //returns false if it doesn't have data
         private Boolean getDataFromDatabase() {
             DBConnect dbConn = new DBConnect();
+            userId = "";
+            username = "";
+            password = "";
+            type = "";
+            status = "";
 
             int numOfRows = dbConn.Count("SELECT Count(*) FROM userdetails where username = '" + textUsername + "'");
             if (numOfRows > 0)
@@ -150,6 +168,7 @@ namespace Bug_Tracking_Application
                 username = list[1][0];
                 password = list[2][0];
                 type = list[3][0];
+                status = list[4][0];
                 return true;
             }
             else{
@@ -160,15 +179,17 @@ namespace Bug_Tracking_Application
             
         }
         
-
+        //open dashboard according to user type
         private void openUserDashboard()
         {
             //if username and password both are valid open dashboard                
             if (type.Equals("admin"))
             {
                 //open admin dashboard
-                MessageBox.Show("Admin");
-                return;
+                this.Hide();
+                Admin.formAdmin formAdmin = new Admin.formAdmin(username, userId);
+                formAdmin.ShowDialog();
+                this.Close();
             }
             if (type.Equals("programmer"))
             {

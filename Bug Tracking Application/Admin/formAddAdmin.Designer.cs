@@ -83,7 +83,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(402, 382);
-            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // pictureBox1
@@ -206,7 +206,7 @@
             this.label3.Location = new System.Drawing.Point(156, 53);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(234, 41);
-            this.label3.TabIndex = 7;
+            this.label3.TabIndex = 6;
             this.label3.Text = "Register Admin";
             // 
             // panel4

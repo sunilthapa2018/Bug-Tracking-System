@@ -29,9 +29,7 @@ namespace Bug_Tracking_Application.Admin
         }
 
         private void formViewProjectNames_Load(object sender, EventArgs e)
-        {
-            //opening this form fullscreen
-            //WindowState = FormWindowState.Maximized;
+        {            
             //making datagridview select whole row on cell select
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             //making datagridview alternate rows color different
@@ -40,6 +38,7 @@ namespace Bug_Tracking_Application.Admin
             getProjectNames();
         }
 
+        //read projectNames from database and load it to datagridview
         private void getProjectNames()
         {            
             try

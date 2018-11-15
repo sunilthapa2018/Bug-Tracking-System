@@ -194,9 +194,14 @@
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.Location = new System.Drawing.Point(914, 57);
+            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.LightCoral;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightCoral;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCoral;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Calibri", 14F);
+            this.btnClose.Location = new System.Drawing.Point(904, 57);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(58, 54);
+            this.btnClose.Size = new System.Drawing.Size(68, 54);
             this.btnClose.TabIndex = 16;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -205,9 +210,11 @@
             // btnAddSolution
             // 
             this.btnAddSolution.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddSolution.Location = new System.Drawing.Point(786, 57);
+            this.btnAddSolution.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddSolution.Font = new System.Drawing.Font("Calibri", 14F);
+            this.btnAddSolution.Location = new System.Drawing.Point(684, 57);
             this.btnAddSolution.Name = "btnAddSolution";
-            this.btnAddSolution.Size = new System.Drawing.Size(58, 54);
+            this.btnAddSolution.Size = new System.Drawing.Size(126, 54);
             this.btnAddSolution.TabIndex = 14;
             this.btnAddSolution.Text = "Add Solution";
             this.btnAddSolution.UseVisualStyleBackColor = true;
@@ -216,9 +223,11 @@
             // btnRefresh
             // 
             this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRefresh.Location = new System.Drawing.Point(850, 57);
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Calibri", 14F);
+            this.btnRefresh.Location = new System.Drawing.Point(816, 57);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(58, 54);
+            this.btnRefresh.Size = new System.Drawing.Size(82, 54);
             this.btnRefresh.TabIndex = 15;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
@@ -239,7 +248,6 @@
             this.Controls.Add(this.label8);
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "formAddSolutions";
-            this.Text = "Add Bug Solution";
             this.Load += new System.EventHandler(this.formAddSolutions_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.myMenu.ResumeLayout(false);

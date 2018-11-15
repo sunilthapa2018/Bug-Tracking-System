@@ -25,7 +25,7 @@ namespace Bug_Tracking_Application.Programmer
             InitializeComponent();
             this.userId = userId;
             this.userName = userName;
-            lblWelcome.Text = "Welcome, " + userName;
+            lblWelcome.Text = "User Type : PROGRAMMER   Welcome, " + userName;
         }
 
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)

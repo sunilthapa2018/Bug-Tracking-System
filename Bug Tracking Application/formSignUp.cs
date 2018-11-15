@@ -106,9 +106,12 @@ namespace Bug_Tracking_Application
             Encrypter encrypter = new Encrypter();
             String conPass = encrypter.MD5Hash(txtPassword.Text);
             try {
-                dbConn.executeQuery("INSERT INTO userdetails (userid, username, password, type) VALUES " +
-                    "(NULL, '" + textUsername + "','" + conPass + "', '" + comboType.ToLower() + "');");                
-                MessageBox.Show("A New User have been Registered");
+                dbConn.executeQuery("INSERT INTO userdetails (userid, username, password, type, status) VALUES " +
+                    "(NULL, '" + textUsername + "','" + conPass + "', '" + comboType.ToLower() + "','active');");                
+                MessageBox.Show("A New " + cboType.SelectedItem.ToString().ToUpper() + " has been Registered");
+                txtConfirmPassword.Clear();
+                txtPassword.Clear();
+                txtUsername.Clear();
             }
             catch (Exception ex) {MessageBox.Show("" + ex.StackTrace);}
             
@@ -116,6 +119,8 @@ namespace Bug_Tracking_Application
 
             
         }
+
+        //validate form if it has anything empty or invalid
         private void validateForm() {
             Boolean isAnythingEmpty = false;
             isFormValidationOk = true;
@@ -152,6 +157,8 @@ namespace Bug_Tracking_Application
                 return;
             }
         }
+
+        //checks if a username is already registered
         private Boolean checkIfUserAlreadyExist() {
             int numOfRows = dbConn.Count("SELECT Count(*) FROM userdetails where username = '" + textUsername + "'");
             if (numOfRows != 0)
