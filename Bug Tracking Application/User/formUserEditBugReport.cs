@@ -193,21 +193,23 @@ namespace Bug_Tracking_Application
             {
                 query = "SELECT bugreports.reportid, bugreports.bugid, bug.bugname, bug.appname, bugreports.description, " +
                         "bugreports.reportdate, bugreports.status FROM bugreports INNER JOIN bug ON " +
-                        "bugreports.bugid = bug.bugid;";                
+                        "bugreports.bugid = bug.bugid WHERE bugreports.userid = '" + userId + "';";                
             }
             //if index of statusbox is greater then 0
             else if (cboAppIndex == 0 && cboBugIndex == 0 && cboStatusIndex > 0)
             {
                 query = "SELECT bugreports.reportid, bugreports.bugid, bug.bugname, bug.appname, bugreports.description, " +
                         "bugreports.reportdate, bugreports.status FROM bugreports INNER JOIN bug ON " +
-                        "bugreports.bugid = bug.bugid Where bugreports.status = '" + cboStatusItem + "';";                
+                        "bugreports.bugid = bug.bugid Where bugreports.status = '" + cboStatusItem + "' AND " +
+                        "bugreports.userid = '" + userId + "'; ";                
             }
             //if index of bug name is greater then 0
             else if (cboAppIndex == 0 && cboBugIndex > 0 && cboStatusIndex == 0)
             {
                 query = "SELECT bugreports.reportid, bugreports.bugid, bug.bugname, bug.appname, bugreports.description, " +
                         "bugreports.reportdate, bugreports.status FROM bugreports INNER JOIN bug ON " +
-                        "bugreports.bugid = bug.bugid Where bug.bugname = '" + cboBugItem + "';";                
+                        "bugreports.bugid = bug.bugid Where bug.bugname = '" + cboBugItem + "' AND " +
+                        "bugreports.userid = '" + userId + "'; ";
             }
             //if index of app name and statusbox is greater then 0
             else if (cboAppIndex == 0 && cboBugIndex > 0 && cboStatusIndex > 0)
@@ -215,14 +217,15 @@ namespace Bug_Tracking_Application
                 query = "SELECT bugreports.reportid, bugreports.bugid, bug.bugname, bug.appname, bugreports.description, " +
                         "bugreports.reportdate, bugreports.status FROM bugreports INNER JOIN bug ON " +
                         "bugreports.bugid = bug.bugid Where bug.bugname = '" + cboBugItem + "' AND bugreports.status='" +
-                        cboStatusItem + "';";                
+                        cboStatusItem + "' AND bugreports.userid = '" + userId + "'; ";
             }
             //if index of app name is greater then 0
             else if (cboAppIndex > 0 && cboBugIndex == 0 && cboStatusIndex == 0)
             {
                 query = "SELECT bugreports.reportid, bugreports.bugid, bug.bugname, bug.appname, bugreports.description, " +
                         "bugreports.reportdate, bugreports.status FROM bugreports INNER JOIN bug ON " +
-                        "bugreports.bugid = bug.bugid Where bug.appname = '" + cboAppItem + "';";                
+                        "bugreports.bugid = bug.bugid Where bug.appname = '" + cboAppItem + "' AND " +
+                        "bugreports.userid = '" + userId + "'; ";
             }
             //if index of appname and status is greater then 0
             else if (cboAppIndex > 0 && cboBugIndex == 0 && cboStatusIndex > 0)
@@ -230,7 +233,7 @@ namespace Bug_Tracking_Application
                 query = "SELECT bugreports.reportid, bugreports.bugid, bug.bugname, bug.appname, bugreports.description, " +
                         "bugreports.reportdate, bugreports.status FROM bugreports INNER JOIN bug ON " +
                         "bugreports.bugid = bug.bugid Where bug.appname = '" + cboAppItem + "' AND bugreports.status='" +
-                        cboStatusItem + "';";                
+                        cboStatusItem + "' AND bugreports.userid = '" + userId + "'; ";
             }
             //if index of appname and bugname is greater then 0
             else if (cboAppIndex > 0 && cboBugIndex > 0 && cboStatusIndex == 0)
@@ -238,7 +241,7 @@ namespace Bug_Tracking_Application
                 query = "SELECT bugreports.reportid, bugreports.bugid, bug.bugname, bug.appname, bugreports.description, " +
                         "bugreports.reportdate, bugreports.status FROM bugreports INNER JOIN bug ON " +
                         "bugreports.bugid = bug.bugid Where bug.appname = '" + cboAppItem + "' AND bug.bugname='" +
-                        cboBugItem + "';";                
+                        cboBugItem + "' AND bugreports.userid = '" + userId + "'; ";
             }
             //if all 3 combobox has selected index greater than 0
             else if (cboAppIndex > 0 && cboBugIndex > 0 && cboStatusIndex > 0)
@@ -246,7 +249,8 @@ namespace Bug_Tracking_Application
                 query = "SELECT bugreports.reportid, bugreports.bugid, bug.bugname, bug.appname, bugreports.description, " +
                         "bugreports.reportdate, bugreports.status FROM bugreports INNER JOIN bug ON " +
                         "bugreports.bugid = bug.bugid Where bug.appname = '" + cboAppItem + "' AND bug.bugname='" +
-                        cboBugItem + "' AND bugreports.status='" + cboStatusItem + "';";                
+                        cboBugItem + "' AND bugreports.status='" + cboStatusItem + "' AND " +
+                        "bugreports.userid = '" + userId + "'; ";
             }
             try
             {
@@ -258,18 +262,25 @@ namespace Bug_Tracking_Application
                 {                   
                     this.dataGridView1.Rows.Add(list[0][i], list[1][i], list[2][i], list[3][i], list[4][i], list[5][i], list[6][i]);
                 }
+                //if number of row is 0 then show 'No Rows Found'
+                if (list[0].Count() <= 0)
+                {
+                    dataGridView1.Rows.Clear();
+                    this.dataGridView1.Rows.Add("No Rows Found");
+                }
             }
-            catch (Exception ex) { MessageBox.Show(ex.StackTrace); }
-           
+            catch (Exception ex) { MessageBox.Show(ex.StackTrace); }           
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            int reportId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-            formUserEditReport formUserEditReport = new formUserEditReport(""+reportId);
-            formUserEditReport.Show();
-
-
+            string value = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            if (!value.Equals("No Rows Found"))
+            {
+                int reportId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+                formUserEditReport formUserEditReport = new formUserEditReport("" + reportId);
+                formUserEditReport.Show();
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)

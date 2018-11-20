@@ -143,6 +143,7 @@
             // 
             // btnSave
             // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Calibri", 14F);
             this.btnSave.Location = new System.Drawing.Point(115, 639);
@@ -155,6 +156,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.LightCoral;
             this.btnCancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightCoral;
             this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCoral;
@@ -209,13 +211,15 @@
             // 
             // picScreenshot
             // 
-            this.picScreenshot.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picScreenshot.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.picScreenshot.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.picScreenshot.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picScreenshot.Location = new System.Drawing.Point(115, 396);
-            this.picScreenshot.MaximumSize = new System.Drawing.Size(400, 225);
             this.picScreenshot.MinimumSize = new System.Drawing.Size(400, 225);
             this.picScreenshot.Name = "picScreenshot";
-            this.picScreenshot.Size = new System.Drawing.Size(400, 225);
+            this.picScreenshot.Size = new System.Drawing.Size(672, 225);
             this.picScreenshot.TabIndex = 14;
             this.picScreenshot.TabStop = false;
             // 

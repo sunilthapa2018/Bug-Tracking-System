@@ -11,11 +11,13 @@ namespace Bug_Tracking_Application
     class DBConnect
     {
         private MySqlConnection connection;
+        private MySqlCommand cmmd;
         private string datasource;
         private string port;
         private string database;
         private string uid;
         private string password;
+        public byte[] imageByte;
 
         //Constructor
         public DBConnect()
@@ -33,7 +35,8 @@ namespace Bug_Tracking_Application
             password = "";
             string connectionString;
             connectionString = "DATASOURCE=" + datasource + ";" + "PORT=" + port + ";" + "DATABASE=" +
-            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";" + "SSLMODE=none;";            
+            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";" + "SSLMODE=none;";
+            connectionString = "DATASOURCE=localhost;PORT=3306;DATABASE=bugtrackerdatabase;UID=root;PASSWORD='';SSLMODE=none;";
             connection = new MySqlConnection(connectionString);
         }
 
@@ -91,6 +94,23 @@ namespace Bug_Tracking_Application
 
                 //Execute command
                 cmd.ExecuteNonQuery();
+
+                //close connection
+                this.CloseConnection();
+            }
+        }
+
+        //Execute any given query 
+        public void executeQueryWithParams(String query)
+        {
+            //open connection
+            if (this.OpenConnection() == true)
+            {
+                //create command and assign the query and connection from the constructor
+                cmmd = new MySqlCommand(query, connection);
+
+                //Execute command
+                cmmd.ExecuteNonQuery();
 
                 //close connection
                 this.CloseConnection();
@@ -199,7 +219,7 @@ namespace Bug_Tracking_Application
                             else if (tableName.Equals("joinType3"))
                             {                                             
 
-                                byte[] imageByte = (byte[])dataReader.GetValue(3);
+                                imageByte = (byte[])dataReader.GetValue(3);
                                 
                                 string[] row = { dataReader.GetString(0), dataReader.GetString(1), dataReader.GetString(2),
                                     dataReader.GetString(3)};

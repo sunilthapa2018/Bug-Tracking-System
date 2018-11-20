@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Bug_Tracking_Application
 {
@@ -20,7 +21,10 @@ namespace Bug_Tracking_Application
         Boolean isFormValidationOk = true;
         Boolean panelOneActive = true;
         Boolean imageShown = false;
-        DBConnect dbConn = new DBConnect();
+        String fileName;
+        DBConnect dbConn = new DBConnect();        
+        MySqlConnection connection = new MySqlConnection("DATASOURCE=localhost;PORT=3306;DATABASE=bugtrackerdatabase;UID=root;PASSWORD='';SSLMODE=none;");
+        MySqlCommand cmd;
         public formUserReportBug(String userId)
         {
             InitializeComponent();
@@ -37,6 +41,7 @@ namespace Bug_Tracking_Application
             setPanelStyle1();
             panel1.AutoScroll = true;
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            picScreenshot.SizeMode = PictureBoxSizeMode.Zoom;
 
 
         }
@@ -129,9 +134,10 @@ namespace Bug_Tracking_Application
             OpenFileDialog opf = new OpenFileDialog();
             opf.Filter = "Choose Image(*.jpg; *.png)|*.jpg; *.png";
             if (opf.ShowDialog() == DialogResult.OK)
-            {                
-                picScreenshot.Image = Image.FromFile(opf.FileName);                
-                picScreenshot.SizeMode = PictureBoxSizeMode.StretchImage;                
+            {
+                fileName = opf.FileName;
+                picScreenshot.Image = Image.FromFile(opf.FileName);
+                picScreenshot.SizeMode = PictureBoxSizeMode.Zoom;                               
                 lblImageSelected.Visible = true;
                 imageShown = true;
                 
@@ -140,7 +146,6 @@ namespace Bug_Tracking_Application
                 if (imageShown)
                 {
                     lblImageSelected.Visible = true;
-
                 }
                 else {
                     lblImageSelected.Visible = false;
@@ -166,21 +171,53 @@ namespace Bug_Tracking_Application
             //getting bug id
             bugid = getBugId(bugName);
 
-            MemoryStream ms = new MemoryStream();
-            picScreenshot.Image.Save(ms, picScreenshot.Image.RawFormat);
-            byte[] img = ms.ToArray();
+            byte[] ImageData;
+            //opeaning selected image and converting image to byte array
+            FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+            BinaryReader br = new BinaryReader(fs);
+            ImageData = br.ReadBytes((int)fs.Length);
+            br.Close();
+            fs.Close();
 
             //saving new bug report-- inserting values to bugreports table
             try
             {
-                string date = DateTime.Now.ToString("MM/dd/yyyy");
-                dbConn.executeQuery("INSERT INTO bugreports (reportid, bugid, description, userid, reportdate, " +
-                    "screenshot, status, assignstatus)" + " VALUES " +
-                    "(NULL, '" + bugid + "','" + description + "', '" + userId + "','" + date + "','" +
-                    img + "','Not Solved', 'Not Assigned');");
+                string date = DateTime.Now.ToString("MM/dd/yyyy");                
+                string CmdString = "INSERT INTO bugreports (bugid, description, userid, reportdate, " +
+                "screenshot, status, assignstatus)" + " VALUES (@bugid,@desc,@userid,@reportdate,@screenshot," +
+                "'Not Solved', 'Not Assigned')";
+                cmd = new MySqlCommand(CmdString, connection);
+                cmd.Parameters.Add("@bugid", MySqlDbType.Int16, 10);
+                cmd.Parameters.Add("@desc", MySqlDbType.VarChar, 500);
+                cmd.Parameters.Add("@userid", MySqlDbType.Int16, 10);
+                cmd.Parameters.Add("@reportdate", MySqlDbType.VarChar, 10);
+                cmd.Parameters.Add("@screenshot", MySqlDbType.Blob);
+
+                cmd.Parameters["@bugid"].Value = bugid;
+                cmd.Parameters["@desc"].Value = description;
+                cmd.Parameters["@userid"].Value = userId;
+                cmd.Parameters["@reportdate"].Value = date;
+                cmd.Parameters["@screenshot"].Value = ImageData;
+
+                connection.Open();
+                int RowsAffected = cmd.ExecuteNonQuery();
+                if (RowsAffected > 0)
+                {
+                    MessageBox.Show("A New bug report has been uploaded");
+                    clearAll();
+                }
+
+                connection.Close();
+
             }
-            catch (Exception ex){MessageBox.Show("" + ex.StackTrace);}
-            MessageBox.Show("A New bug report has been uploaded");
+            catch (Exception ex) { MessageBox.Show("" + ex.StackTrace); }
+            finally {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            };
+            
         }
 
         //adding new report to old bug to our database and showing sucess message
@@ -188,28 +225,64 @@ namespace Bug_Tracking_Application
         {
             //getting bug id
             bugid = getBugId(cboBugName.SelectedItem.ToString());
-            MemoryStream ms = new MemoryStream();
+
+            /*MemoryStream ms = new MemoryStream();
             picScreenshot.Image.Save(ms, picScreenshot.Image.RawFormat);
-            byte[] img = ms.ToArray();
+            byte[] img = ms.ToArray();*/
+
+            byte[] ImageData;
+            FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+            BinaryReader br = new BinaryReader(fs);
+            ImageData = br.ReadBytes((int)fs.Length);
 
             //saving new bug report-- inserting values to bugreports table
             try
             {
-                string date = DateTime.Now.ToString("MM/dd/yyyy");
-                dbConn.executeQuery("INSERT INTO bugreports (reportid, bugid, description, userid, reportdate, " +
-                    "screenshot, status, assignstatus)" + " VALUES " +
-                    "(NULL, '" + bugid + "','" + description + "', '" + userId + "','" + date + "','" +
-                    img + "','Not Solved', 'Not Assigned');");
+                string date = DateTime.Now.ToString("MM/dd/yyyy");                
+                string CmdString = "INSERT INTO bugreports (bugid, description, userid, reportdate, " +
+                "screenshot, status, assignstatus)" + " VALUES (@bugid,@desc,@userid,@reportdate,@screenshot," +
+                "'Not Solved', 'Not Assigned')";
+                cmd = new MySqlCommand(CmdString, connection);
+                cmd.Parameters.Add("@bugid", MySqlDbType.Int16, 10);
+                cmd.Parameters.Add("@desc", MySqlDbType.VarChar, 500);
+                cmd.Parameters.Add("@userid", MySqlDbType.Int16, 10);
+                cmd.Parameters.Add("@reportdate", MySqlDbType.VarChar, 10);
+                cmd.Parameters.Add("@screenshot", MySqlDbType.Blob);
+
+                cmd.Parameters["@bugid"].Value = bugid;
+                cmd.Parameters["@desc"].Value = description;
+                cmd.Parameters["@userid"].Value = userId;
+                cmd.Parameters["@reportdate"].Value = date;
+                cmd.Parameters["@screenshot"].Value = ImageData;
+
+                connection.Open();
+                int RowsAffected = cmd.ExecuteNonQuery();
+                if (RowsAffected > 0)
+                {
+                    MessageBox.Show("A New bug report has been uploaded");
+                    clearAll();
+                }
+
+                connection.Close();
+
             }
             catch (Exception ex) { MessageBox.Show("" + ex.StackTrace); }
-            MessageBox.Show("A New report has been uploaded for an old bug");
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            };
+
         }
-        byte[] convertImageToBinary(Image img) {
-            using (MemoryStream ms = new MemoryStream()) {
-                img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                return ms.ToArray();
-            }
-        }
+        //this function clears all fields
+        void clearAll() {
+            txtBugName.Clear();
+            txtDescription.Clear();
+            picScreenshot.Image = null;
+
+        }        
 
         //this function takes bName as input and returns bugId
         private string getBugId(String bName) {
@@ -350,7 +423,12 @@ namespace Bug_Tracking_Application
             errorProvider.SetError(txtDescription, null);
             errorProvider.SetError(cboAppName, null);
             errorProvider.SetError(txtBugName, null);
-
+            errorProvider.SetError(picScreenshot, null);
+            if (!lblImageSelected.Visible) {
+                errorProvider.SetError(picScreenshot, "Please Select A Screenshot");
+                txtDescription.Focus();
+                isAnythingEmpty = true;
+            }
             if (string.IsNullOrEmpty(textDescription))
             {
                 //setting errorporvider and giving error message
