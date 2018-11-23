@@ -224,8 +224,9 @@ namespace Bug_Tracking_Application.Programmer
 
         private void formAddSolution_Load(object sender, EventArgs e)
         {
-            getBugAndAppName();          
-            
+            getBugAndAppName();
+            WindowState = FormWindowState.Maximized;
+
         }
 
         //get bugs and app names from database and load it to textboxs

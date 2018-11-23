@@ -18,6 +18,7 @@ namespace Bug_Tracking_Application
         private string uid;
         private string password;
         public byte[] imageByte;
+        Boolean hasError = false;
 
         //Constructor
         public DBConnect()
@@ -43,28 +44,45 @@ namespace Bug_Tracking_Application
         //open connection to database
         private bool OpenConnection()
         {
-            try
+            Boolean status = false;
+            if (!hasError)
             {
-                connection.Open();
-                return true;
-            }
-            catch (MySqlException ex)
-            {                
-                //The two most common error numbers when connecting are as follows:
-                //0: Cannot connect to server.
-                //1045: Invalid user name and/or password.
-                switch (ex.Number)
+                try
                 {
-                    case 0:
-                        MessageBox.Show("Cannot connect to server.  Contact administrator");
-                        break;
-
-                    case 1045:
-                        MessageBox.Show("Invalid username/password, please try again");
-                        break;
-                        
+                    connection.Open();                    
+                    status = true;
                 }
-                return false;
+                catch (MySqlException ex)
+                {
+                    //The two most common error numbers when connecting are as follows:
+                    //0: Cannot connect to server.
+                    //1042: Cannot connect to server.
+                    //1045: Invalid user name and/or password.
+                    switch (ex.Number)
+                    {
+                        case 0:
+                            MessageBox.Show("Cannot connect to server.  Contact administrator");
+                            hasError = true;
+                            break;
+
+                        case 1042:
+                            MessageBox.Show("Cannot connect to databse server. Xampp is not open.");
+                            hasError = true;
+                            break;
+
+                        case 1045:
+                            MessageBox.Show("Invalid username/password, please try again");
+                            hasError = true;
+                            break;
+
+                    }
+                    status = false;
+
+                }
+                return status;                
+            }
+            else {
+                return status;
             }
         }
 

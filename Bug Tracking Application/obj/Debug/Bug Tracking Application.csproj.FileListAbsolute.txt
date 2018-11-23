@@ -115,7 +115,6 @@ C:\Users\Sunil\Desktop\Commits\7 Finishing Touches\Bug Tracking Application\bin\
 C:\Users\Sunil\Desktop\Commits\7 Finishing Touches\Bug Tracking Application\bin\Debug\MySql.Data.dll
 C:\Users\Sunil\Desktop\Commits\7 Finishing Touches\Bug Tracking Application\bin\Debug\Google.Protobuf.dll
 C:\Users\Sunil\Desktop\Commits\7 Finishing Touches\Bug Tracking Application\bin\Debug\MySql.Data.xml
-C:\Users\Sunil\Desktop\Commits\7 Finishing Touches\Bug Tracking Application\obj\Debug\Bug Tracking Application.csprojAssemblyReference.cache
 C:\Users\Sunil\Desktop\Commits\7 Finishing Touches\Bug Tracking Application\obj\Debug\Bug_Tracking_Application.Admin.formAddAdmin.resources
 C:\Users\Sunil\Desktop\Commits\7 Finishing Touches\Bug Tracking Application\obj\Debug\Bug_Tracking_Application.Admin.formAddBugAppointment.resources
 C:\Users\Sunil\Desktop\Commits\7 Finishing Touches\Bug Tracking Application\obj\Debug\Bug_Tracking_Application.Admin.formAddProject.resources
@@ -151,3 +150,7 @@ C:\Users\Sunil\Desktop\Commits\7 Finishing Touches\Bug Tracking Application\obj\
 C:\Users\Sunil\Desktop\Commits\7 Finishing Touches\Bug Tracking Application\obj\Debug\Bug Tracking Application.exe
 C:\Users\Sunil\Desktop\Commits\7 Finishing Touches\Bug Tracking Application\obj\Debug\Bug Tracking Application.pdb
 C:\Users\Sunil\Desktop\Commits\7 Finishing Touches\Bug Tracking Application\obj\Debug\Bug_Tracking_Application.Admin.formManageUsers.resources
+C:\Users\Sunil\Desktop\Commits\7 Finishing Touches\Bug Tracking Application\bin\Debug\WebDriver.dll
+C:\Users\Sunil\Desktop\Commits\7 Finishing Touches\Bug Tracking Application\bin\Debug\WebDriver.xml
+C:\Users\Sunil\Desktop\Commits\7 Finishing Touches\Bug Tracking Application\bin\Debug\WebDriver.Support.dll
+C:\Users\Sunil\Desktop\Commits\7 Finishing Touches\Bug Tracking Application\bin\Debug\WebDriver.Support.xml

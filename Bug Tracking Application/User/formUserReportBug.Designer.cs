@@ -116,7 +116,7 @@
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(672, 164);
-            this.txtDescription.TabIndex = 2;
+            this.txtDescription.TabIndex = 3;
             this.txtDescription.TextChanged += new System.EventHandler(this.txtDescription_TextChanged);
             this.txtDescription.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDescription_KeyDown);
             // 
@@ -136,7 +136,7 @@
             this.btnImportScreenshot.Location = new System.Drawing.Point(115, 349);
             this.btnImportScreenshot.Name = "btnImportScreenshot";
             this.btnImportScreenshot.Size = new System.Drawing.Size(79, 29);
-            this.btnImportScreenshot.TabIndex = 3;
+            this.btnImportScreenshot.TabIndex = 4;
             this.btnImportScreenshot.Text = "Import";
             this.btnImportScreenshot.UseVisualStyleBackColor = true;
             this.btnImportScreenshot.Click += new System.EventHandler(this.btnImportScreenshot_Click);
@@ -149,7 +149,7 @@
             this.btnSave.Location = new System.Drawing.Point(115, 639);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(79, 45);
-            this.btnSave.TabIndex = 4;
+            this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -165,7 +165,7 @@
             this.btnCancel.Location = new System.Drawing.Point(215, 639);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(79, 45);
-            this.btnCancel.TabIndex = 5;
+            this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Close";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -176,7 +176,7 @@
             this.txtBugName.Location = new System.Drawing.Point(115, 128);
             this.txtBugName.Name = "txtBugName";
             this.txtBugName.Size = new System.Drawing.Size(287, 27);
-            this.txtBugName.TabIndex = 11;
+            this.txtBugName.TabIndex = 1;
             this.txtBugName.TextChanged += new System.EventHandler(this.txtBugName_TextChanged);
             // 
             // errorProvider
@@ -246,14 +246,14 @@
             this.cboBugName.Location = new System.Drawing.Point(115, 128);
             this.cboBugName.Name = "cboBugName";
             this.cboBugName.Size = new System.Drawing.Size(287, 27);
-            this.cboBugName.TabIndex = 1;
+            this.cboBugName.TabIndex = 2;
             // 
             // btnAddNewBug
             // 
             this.btnAddNewBug.Location = new System.Drawing.Point(12, 11);
             this.btnAddNewBug.Name = "btnAddNewBug";
             this.btnAddNewBug.Size = new System.Drawing.Size(140, 25);
-            this.btnAddNewBug.TabIndex = 13;
+            this.btnAddNewBug.TabIndex = 1;
             this.btnAddNewBug.Text = "Add New Bug and Report";
             this.btnAddNewBug.UseVisualStyleBackColor = true;
             this.btnAddNewBug.Click += new System.EventHandler(this.btnAddNewBug_Click);
@@ -263,7 +263,7 @@
             this.btnAddNewError.Location = new System.Drawing.Point(158, 11);
             this.btnAddNewError.Name = "btnAddNewError";
             this.btnAddNewError.Size = new System.Drawing.Size(140, 25);
-            this.btnAddNewError.TabIndex = 13;
+            this.btnAddNewError.TabIndex = 2;
             this.btnAddNewError.Text = "Add New Error to Old Bug";
             this.btnAddNewError.UseVisualStyleBackColor = true;
             this.btnAddNewError.Click += new System.EventHandler(this.btnAddNewError_Click);

@@ -20,9 +20,9 @@ namespace Bug_Tracking_Application.Admin
 
         private void btnAppointBug_Click(object sender, EventArgs e)
         {
-            string value = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            string Status = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-            if (!value.Equals("No Rows Found"))
+            string value = dataGridView1.CurrentRow.Cells[0].Value.ToString().ToLower();
+            string Status = dataGridView1.CurrentRow.Cells[7].Value.ToString().ToLower();
+            if (!value.Equals("no rows found"))
             {
                 if (Status.Equals("not assigned"))
                 {

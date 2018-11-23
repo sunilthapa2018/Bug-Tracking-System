@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace Bug_Tracking_Application.Admin
 {   
@@ -212,6 +206,11 @@ namespace Bug_Tracking_Application.Admin
             {
                 formManageUsers.Activate();
             }
+        }
+
+        private void liveRepoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LiveRepo liveRepo = new LiveRepo();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)

@@ -135,5 +135,9 @@ namespace Bug_Tracking_Application.Programmer
             return false;
         }
 
+        private void liveRepoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LiveRepo liveRepo = new LiveRepo();
+        }
     }
 }

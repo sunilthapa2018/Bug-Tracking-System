@@ -161,11 +161,20 @@ namespace Bug_Tracking_Application.Programmer
 
         private void btnAddSolution_Click(object sender, EventArgs e)
         {
+            string Status = dataGridView1.CurrentRow.Cells[8].Value.ToString().ToLower();
             string value = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             if (!value.Equals("No Rows Found")) {
-                int reportId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-                formAddBugSolution formAddBugSolution = new formAddBugSolution(userId,""+reportId);
-                formAddBugSolution.Show();
+                if (Status.Equals("not solved"))
+                {
+                    int reportId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+                    formAddBugSolution formAddBugSolution = new formAddBugSolution(userId, "" + reportId);
+                    formAddBugSolution.Show();
+                }
+                else
+                {
+                    MessageBox.Show("This bug has already been Solved. " +
+                        "So please select bug that has not been Solved.");
+                }
             }
             
         }

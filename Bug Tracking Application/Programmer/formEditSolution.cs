@@ -96,6 +96,7 @@ namespace Bug_Tracking_Application.Programmer
         {
             getBugAndAppName();
             getDetailsFromDB();
+            WindowState = FormWindowState.Maximized;
         }
 
         //loads data from database to textboxes

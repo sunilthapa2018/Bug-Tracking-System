@@ -112,5 +112,10 @@ namespace Bug_Tracking_Application
                 formEditUser.Activate();
             }
         }
+
+        private void liveRepoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LiveRepo liveRepo = new LiveRepo();
+        }
     }
 }

@@ -16,10 +16,10 @@ namespace Bug_Tracking_Application
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new formLogin());//Login Form
+            Application.Run(new formLogin());//Login Form
 
             //users 
-            Application.Run(new formUser("suniluser","20"));
+            //Application.Run(new formUser("suniluser","20"));
             //Application.Run(new formUserReportBug("11"));
             //Application.Run(new formUserEditBugReport("11"));
             //Application.Run(new formUserEditReport("19"));

@@ -40,6 +40,8 @@
             this.userDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblWelcome = new System.Windows.Forms.ToolStripStatusLabel();
+            this.repoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.liveRepoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -49,7 +51,8 @@
             this.menuStrip1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.editToolStripMenuItem});
+            this.editToolStripMenuItem,
+            this.repoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(784, 24);
@@ -71,7 +74,7 @@
             // 
             this.homeToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("homeToolStripMenuItem.Image")));
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.homeToolStripMenuItem.Text = "Home";
             this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
@@ -79,7 +82,7 @@
             // 
             this.reportBugToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("reportBugToolStripMenuItem.Image")));
             this.reportBugToolStripMenuItem.Name = "reportBugToolStripMenuItem";
-            this.reportBugToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.reportBugToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.reportBugToolStripMenuItem.Text = "Report Bug";
             this.reportBugToolStripMenuItem.Click += new System.EventHandler(this.reportBugToolStripMenuItem_Click);
             // 
@@ -87,7 +90,7 @@
             // 
             this.signOutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("signOutToolStripMenuItem.Image")));
             this.signOutToolStripMenuItem.Name = "signOutToolStripMenuItem";
-            this.signOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.signOutToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.signOutToolStripMenuItem.Text = "Sign Out";
             this.signOutToolStripMenuItem.Click += new System.EventHandler(this.signOutToolStripMenuItem_Click);
             // 
@@ -95,7 +98,7 @@
             // 
             this.exitToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exitToolStripMenuItem.Image")));
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -113,7 +116,7 @@
             // 
             this.bugReportToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("bugReportToolStripMenuItem.Image")));
             this.bugReportToolStripMenuItem.Name = "bugReportToolStripMenuItem";
-            this.bugReportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bugReportToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.bugReportToolStripMenuItem.Text = "Bug Report";
             this.bugReportToolStripMenuItem.Click += new System.EventHandler(this.bugReportToolStripMenuItem_Click);
             // 
@@ -121,7 +124,7 @@
             // 
             this.userDetailsToolStripMenuItem.Image = global::Bug_Tracking_Application.Properties.Resources.key;
             this.userDetailsToolStripMenuItem.Name = "userDetailsToolStripMenuItem";
-            this.userDetailsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.userDetailsToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.userDetailsToolStripMenuItem.Text = "Password";
             this.userDetailsToolStripMenuItem.Click += new System.EventHandler(this.userDetailsToolStripMenuItem_Click);
             // 
@@ -141,6 +144,22 @@
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(60, 17);
             this.lblWelcome.Text = "Welcome!";
+            // 
+            // repoToolStripMenuItem
+            // 
+            this.repoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.liveRepoToolStripMenuItem});
+            this.repoToolStripMenuItem.Name = "repoToolStripMenuItem";
+            this.repoToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
+            this.repoToolStripMenuItem.Text = "Repo";
+            // 
+            // liveRepoToolStripMenuItem
+            // 
+            this.liveRepoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("liveRepoToolStripMenuItem.Image")));
+            this.liveRepoToolStripMenuItem.Name = "liveRepoToolStripMenuItem";
+            this.liveRepoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.liveRepoToolStripMenuItem.Text = "Live Repo";
+            this.liveRepoToolStripMenuItem.Click += new System.EventHandler(this.liveRepoToolStripMenuItem_Click);
             // 
             // formUser
             // 
@@ -178,5 +197,7 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lblWelcome;
         private System.Windows.Forms.ToolStripMenuItem userDetailsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem repoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem liveRepoToolStripMenuItem;
     }
 }
